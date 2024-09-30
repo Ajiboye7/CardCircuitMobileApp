@@ -9,7 +9,7 @@ import card from "../assets/icons/card.png"
 import dropDown from "../assets/icons/dropdown.png"
 import profile from "../assets/icons/frame.png"
 import  utility from "../assets/icons/Group 18.png"
-import hide from "../assets/icons/Group.png"
+import eye from "../assets/icons/Group.png"
 import home from "../assets/icons/home.png"
 import info from "../assets/icons/info.png"
 import masterCard from "../assets/icons/MasterCard.png"
@@ -27,5 +27,30 @@ import user from "../assets/icons/user-octagon.png"
 
 
 export default{
-    
-}
+    addCircle,
+    add,
+    arrowLeft,
+    arrowRight,
+    swap,
+    calender,
+    call,
+    card,
+    dropDown,
+    profile,
+    utility,
+    eye,
+    home,
+    info,
+    masterCard,
+    money,
+    more,
+    notification,
+    subscription,
+    logOut,
+    scan,
+    securitySafe,
+    send,
+    setting,
+    simCard,
+    user,
+};
