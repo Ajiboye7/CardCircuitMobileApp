@@ -7,7 +7,6 @@ const index = () => {
    <SafeAreaView>
     <View>
       <Image
-        
       />
     </View>
    </SafeAreaView>
