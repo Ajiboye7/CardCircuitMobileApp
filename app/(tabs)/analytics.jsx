@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const index = () => {
+const Analytics = () => {
   return (
     <View className="flex items-center justify-center mt-20">
-      <Text className="text-white"> Onboarding: CardCircuit Mobile app</Text>
+      <Text className= 'text-white'>Analytics</Text>
     </View>
   )
 }
 
-export default index
+export default Analytics
