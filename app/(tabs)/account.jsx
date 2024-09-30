@@ -4,7 +4,7 @@ import React from 'react'
 const account = () => {
   return (
     <View>
-      <Text>account</Text>
+      <Text className="text-white">account</Text>
     </View>
   )
 }
