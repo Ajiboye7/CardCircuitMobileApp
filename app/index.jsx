@@ -1,11 +1,16 @@
-import { View, Text } from 'react-native'
+import { View, Text,Image } from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const index = () => {
   return (
-    <View className="flex items-center justify-center mt-20">
-      <Text className="text-white"> Onboarding: CardCircuit Mobile app</Text>
+   <SafeAreaView>
+    <View>
+      <Image
+        
+      />
     </View>
+   </SafeAreaView>
   )
 }
 
