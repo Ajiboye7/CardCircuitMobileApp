@@ -4,9 +4,9 @@ import React from 'react'
 const Home = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <Text className="text-white">Home</Text>
     </View>
   )
 }
 
-export default Home
+export default Home;
