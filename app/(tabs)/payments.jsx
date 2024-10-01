@@ -3,10 +3,3 @@ import React from 'react'
 
 const payments = () => {
   return (
-    <View>
-      <Text className="text-white">payments</Text>
-    </View>
-  )
-}
-
-export default payments
