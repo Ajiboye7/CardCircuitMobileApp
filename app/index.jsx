@@ -6,8 +6,7 @@ const index = () => {
   return (
    <SafeAreaView>
     <View>
-      <Image
-      />
+    <Text className="text-white">THis is Index screen</Text>
     </View>
    </SafeAreaView>
   )
