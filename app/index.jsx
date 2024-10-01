@@ -16,7 +16,22 @@ const index = () => {
     resizeMode='contain'
     />
     <View>
-    <Text className="text-wht-gray-100 font-sfPro">Already have an account?</Text>
+    <Text className="text-white">
+        <Text style={{ fontWeight: 'bold' }}>Simplify Your</Text>
+        <Text style={{ color: 'yellow' }}>Wallet.</Text>
+        <Text>{'\n'}Unify Your </Text>
+        <Text style={{ fontWeight: 'bold' }}>Finances.</Text>
+      </Text>
+      <Text className="text-white">
+      Welcome to seamless centralized banking.{'\n'}
+      Manage and track all your cards in one app. 
+      </Text>
+      <CustomButton
+        title="Get Started"
+        handlePress={()=> router.push('/analytics')}
+      />
+      <View className="flex-row gap-2 pt-5">
+          <Text className="text-lg text-gray-100 font-sfPro">Already have an account?</Text>
           <Link href="/home" className="text-secondary text-lg font-psemibold">Log In </Link>
         </View>
     </View>
