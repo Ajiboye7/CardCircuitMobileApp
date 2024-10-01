@@ -2,6 +2,7 @@ import { View, Text,Image,ScrollView} from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from "../constants"
+import CustomButton from "../components/CustomButton";
 
 
 const index = () => {
@@ -22,6 +23,10 @@ const index = () => {
       Welcome to seamless centralized banking.
       Manage and track all your cards in one app. 
       </Text>
+      <CustomButton
+        title="Get Started"
+        handlePress={()=> router.push('/analytics')}
+      />
     </View>
     </View>
     </ScrollView>
