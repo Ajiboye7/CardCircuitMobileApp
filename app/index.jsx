@@ -1,13 +1,20 @@
-import { View, Text,Image } from 'react-native'
+import { View, Text,Image,ScrollView} from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import {images} from "../constants"
+
 
 const index = () => {
   return (
-   <SafeAreaView>
+   <SafeAreaView className="bg-primary">
+   <ScrollView>
     <View>
-    <Text className="text-white">THis is Index screen</Text>
+    <Image
+    source={images.indexImage}
+    resizeMode='contain'
+    />
     </View>
+    </ScrollView>
    </SafeAreaView>
   )
 }
