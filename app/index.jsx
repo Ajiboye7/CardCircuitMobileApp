@@ -18,7 +18,7 @@ const index = () => {
     <View>
     <Text className="text-white">
         <Text style={{ fontWeight: 'bold' }}>Simplify Your</Text>
-        <Text>Wallet.</Text>
+        <Text style={{ color: 'yellow' }}>Wallet.</Text>
         <Text>{'\n'}Unify Your </Text>
         <Text style={{ fontWeight: 'bold' }}>Finances.</Text>
       </Text>
