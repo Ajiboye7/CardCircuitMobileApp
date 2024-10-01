@@ -16,9 +16,11 @@ const index = () => {
     resizeMode='contain'
     />
     <View>
-      <Text className="text-white">
-      Simplify Your Wallet.
-      Unify Your Finances.
+    <Text className="text-white">
+        <Text style={{ fontWeight: 'bold' }}>Simplify Your </Text>
+        <Text style={{ color: 'yellow' }}>Wallet.</Text>
+        <Text>{'\n'}Unify Your </Text>
+        <Text style={{ fontWeight: 'bold' }}>Finances.</Text>
       </Text>
       <Text className="text-white">
       Welcome to seamless centralized banking.{'\n'}
