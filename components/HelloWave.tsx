@@ -9,7 +9,6 @@ import Animated, {
 
 import { ThemedText } from '@/components/ThemedText';
 
-
 const styles = StyleSheet.create({
   text: {
     fontSize: 28,
