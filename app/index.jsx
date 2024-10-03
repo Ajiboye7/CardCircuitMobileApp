@@ -21,7 +21,7 @@ const index = () => {
     <View className="h-1/2">
     <Text className="text-white my-10 text-[32px] leading-[40px]">
         <Text style={{ fontWeight: 'bold' }}>Simplify Your</Text>
-        <Text style={{ color: 'yellow' }}>Wallet.</Text>
+        <Text style={{ color: 'yellow' }}> Wallet.</Text>
         <Text>{'\n'}Unify Your </Text>
         <Text style={{ fontWeight: 'bold' }}>Finances.</Text>
       </Text>
@@ -31,7 +31,8 @@ const index = () => {
       </Text>
       <CustomButton
         title="Get Started"
-        handlePress={()=> router.push('/analytics')}
+        handlePress={()=> router.push('/sign-in')}
+
       />
       <View className="flex-row gap-2 pt-5">
           <Text className="text-lg text-gray-100 font-sfPro">Already have an account?</Text>

@@ -3,14 +3,16 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native-web'
 
-const signUp = () => {
+const SignUp = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-        
+        <View>
+          
+        </View>
       </ScrollView>
     </SafeAreaView>
   )
 }
 
-export default signUp
+export default SignUp
