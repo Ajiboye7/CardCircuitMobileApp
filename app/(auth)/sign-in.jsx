@@ -1,6 +1,6 @@
-import { View, Text,Image } from 'react-native'
+import { View, Text,Image,ScrollView } from 'react-native'
+import { SafeAreaView } from "react-native-safe-area-context";
 import React from 'react'
-import { SafeAreaView, ScrollView } from 'react-native-web'
 import { icons } from "../../constants";
 const SignIn = () => {
   return (
@@ -8,8 +8,6 @@ const SignIn = () => {
     <ScrollView>
       <View>
         <Image
-          source={icons.arrowLeft}
-          resizeMode='contain'
         />
       </View>
     </ScrollView>
