@@ -11,11 +11,14 @@ const index = () => {
    <SafeAreaView className="bg-primary h-full">
    <ScrollView contentContainerStyle={{height:"100%"}}>
     <View>
+    <View className="h-1/2">
     <Image
     source={images.indexImage}
     resizeMode='contain'
     />
-    <View>
+    </View>
+    
+    <View className="h-1/2">
     <Text className="text-white my-10 text-[32px] leading-[40px]">
         <Text style={{ fontWeight: 'bold' }}>Simplify Your</Text>
         <Text style={{ color: 'yellow' }}>Wallet.</Text>
