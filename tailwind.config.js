@@ -15,9 +15,11 @@ module.exports = {
           '30': "rgba(128, 139, 150, 0.3)",
         },
         lightBlue: "#7687DA",
+        
         fontColor: {
           light: "#F0F0F0",  
-          gray: "#858585",   
+          gray: "#858585",  
+          lighGray :"#585858" ,
           soft: "#DEDEDE",
         },
       },

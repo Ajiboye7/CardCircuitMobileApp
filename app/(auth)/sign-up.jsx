@@ -1,11 +1,21 @@
 import { Text, View, Image,ScrollView} from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context";
-import React from 'react'
+import React, { useState } from 'react'
 import { icons } from "../../constants";
 import FormField from '../../components/FormField';
 
 
+
+
 const SignUp = () => {
+
+  const [form, setForm] = useState({
+    name:"",
+    email:"",
+    password:"",
+  });
+
+
   return (
   <SafeAreaView>
     <ScrollView>
