@@ -16,7 +16,7 @@ const index = () => {
     resizeMode='contain'
     />
     <View>
-    <Text className="text-white">
+    <Text className="text-white my-10 text-[32px]">
         <Text style={{ fontWeight: 'bold' }}>Simplify Your</Text>
         <Text style={{ color: 'yellow' }}>Wallet.</Text>
         <Text>{'\n'}Unify Your </Text>
