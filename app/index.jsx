@@ -6,7 +6,7 @@ import CustomButton from "../components/CustomButton";
 import { Redirect, router,Link } from "expo-router";
 
 
-const index = () => {
+const HomeScreen = () => {
   return (
    <SafeAreaView className="bg-primary h-full">
    <ScrollView contentContainerStyle={{height:"100%"}}>
@@ -31,7 +31,7 @@ const index = () => {
       </Text>
       <CustomButton
         title="Get Started"
-        handlePress={()=> router.push('/sign-in')}
+        handlePress={()=> router.push('/sign-up')}
 
       />
       <View className="flex-row gap-2 pt-5">
@@ -45,4 +45,4 @@ const index = () => {
   )
 }
 
-export default index
+export default HomeScreen
