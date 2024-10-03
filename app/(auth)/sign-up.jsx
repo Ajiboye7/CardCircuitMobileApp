@@ -19,7 +19,11 @@ const SignUp = () => {
       <Text className="text-white text-[32px] font-600 font-sfProRoundedMedium">Let's Get Started</Text>
       <Text className="text-white">Register to manage and track all your cards today on
       CardCircuit</Text>
-      <FormField/>
+      <FormField
+        title="First & Last Name"
+        value={form.name}
+        placeholder="John Doe"
+      />
     </ScrollView>
   </SafeAreaView>
   )
