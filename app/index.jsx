@@ -6,7 +6,7 @@ import CustomButton from "../components/CustomButton";
 import { Redirect, router,Link } from "expo-router";
 
 
-const HomeScreen = () => {
+const Onboarding = () => {
   return (
    <SafeAreaView className="bg-primary h-full">
    <ScrollView contentContainerStyle={{height:"100%"}}>
@@ -45,4 +45,4 @@ const HomeScreen = () => {
   )
 }
 
-export default HomeScreen
+export default Onboarding
