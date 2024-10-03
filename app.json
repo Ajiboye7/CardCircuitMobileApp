@@ -11,6 +11,7 @@
       "image": "./assets/images/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#030B11"
+      
     },
     "ios": {
       "supportsTablet": true

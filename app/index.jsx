@@ -16,12 +16,12 @@ const index = () => {
     resizeMode='contain'
     />
     <View>
-    <Text className="text-white">
-        <Text style={{ fontWeight: 'bold' }}>Simplify Your</Text>
+    
+        <Text cl>Simplify Your</Text>
         <Text style={{ color: 'yellow' }}>Wallet.</Text>
-        <Text>{'\n'}Unify Your </Text>
-        <Text style={{ fontWeight: 'bold' }}>Finances.</Text>
-      </Text>
+        <Text className="text-white">{'\n'}Unify Your </Text>
+        <Text className="text-white">Finances.</Text>
+      
       <Text className="text-white">
       Welcome to seamless centralized banking.{'\n'}
       Manage and track all your cards in one app. 
