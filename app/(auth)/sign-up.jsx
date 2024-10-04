@@ -13,7 +13,7 @@ const SignUp = () => {
   });
 
   return (
-    <SafeAreaView className="h-full">
+    <SafeAreaView className="pl-3 pr-1 py-3 h-full">
       <ScrollView>
         <View className=" bg-secondary rounded-full w-[40px] h-[40px] justify-center items-center">
           <Image
@@ -25,11 +25,12 @@ const SignUp = () => {
         <Text className="text-white text-[32px] font-600 font-sfProRoundedMedium">
           Let's Get Started
         </Text>
-        <Text className="text-white text-[14px] leading-[20px] font-sfPro font-400">
+        <Text className="text-white text-[14px] leading-[20px] font-light">
           Register to manage and track all your cards today on{" "}
-          <Text className="">CardCircuit</Text>
+          <Text className="font-bold">CardCircuit</Text>
         </Text>
-        <View className="p-3">
+
+        <View className="">
           <FormField
             title="First & Last Name"
             value={form.name}
