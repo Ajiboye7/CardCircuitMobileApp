@@ -13,16 +13,16 @@ const SignUp = () => {
   });
 
   return (
-    <SafeAreaView className="pl-3 pr-1 py-3 h-full">
+    <SafeAreaView className="pl-3 pr-1 py-3 h-full mt-8">
       <ScrollView>
-        <View className=" bg-secondary rounded-full w-[40px] h-[40px] justify-center items-center">
+        <View className=" bg-secondary rounded-full w-[40px] h-[40px] justify-center items-center mb-8">
           <Image
             source={icons.arrowLeft}
             resizeMode="contain"
             className="w-[30px] h-[30px]"
           />
         </View>
-        <Text className="text-white text-[32px] font-600 font-sfProRoundedMedium">
+        <Text className="text-white text-[32px] font-600 font-sfProRoundedMedium mb-5">
           Let's Get Started
         </Text>
         <Text className="text-white text-[14px] leading-[20px] font-light">
