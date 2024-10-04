@@ -6,7 +6,22 @@ import CustomButton from "../components/CustomButton";
 import { Redirect, router,Link } from "expo-router";
 
 
-consld"> Wallet.</Text>{'\n'}
+const Onboarding = () => {
+  return (
+   <SafeAreaView className="bg-primary h-full">
+   <ScrollView contentContainerStyle={{height:"100%"}}>
+    <View>
+    <View className="h-1/2">
+    <Image
+    source={images.indexImage}
+    resizeMode='contain'
+    />
+    </View>
+    
+    <View className="h-1/2 mt-10">
+    <Text className="text-white text-[32px] leading-[40px]">
+        <Text>Simplify Your</Text>
+        <Text className="font-bold"> Wallet.</Text>{'\n'}
         <Text className="font-bold">Unify</Text> {""}
         <Text>Your </Text>
         <Text>Finances.</Text>
