@@ -13,7 +13,7 @@ const SignUp = () => {
   });
 
   return (
-    <SafeAreaView>
+    <SafeAreaView className="h-full">
       <ScrollView>
         <View className=" bg-secondary rounded-full w-[40px] h-[40px] justify-center items-center">
           <Image
@@ -25,41 +25,45 @@ const SignUp = () => {
         <Text className="text-white text-[32px] font-600 font-sfProRoundedMedium">
           Let's Get Started
         </Text>
-        <Text className="text-white">
-          Register to manage and track all your cards today on CardCircuit
+        <Text className="text-white text-[14px] leading-[20px] font-sfPro font-400">
+          Register to manage and track all your cards today on{" "}
+          <Text className="">CardCircuit</Text>
         </Text>
-        <FormField
-          title="First & Last Name"
-          value={form.name}
-          placeholder="John Doe"
-          handleChangeText={(e) => setForm({ ...form, name: e })}
-        />
+        <View className="p-3">
+          <FormField
+            title="First & Last Name"
+            value={form.name}
+            placeholder="John Doe"
+            handleChangeText={(e) => setForm({ ...form, name: e })}
+          />
 
-        <FormField
-          title="Email Address"
-          value={form.email}
-          placeholder="name@example.com"
-          keyboardType="email-address"
-          handleChangeText={(e) => setForm({ ...form, email: e })}
-        />
+          <FormField
+            title="Email Address"
+            value={form.email}
+            placeholder="name@example.com"
+            keyboardType="email-address"
+            handleChangeText={(e) => setForm({ ...form, email: e })}
+          />
 
-        <FormField
-          title="Create a password"
-          value={form.password}
-          placeholder="Password"
-          handleChangeText={(e) => setForm({ ...form, password: e })}
-        />
+          <FormField
+            title="Create a password"
+            value={form.password}
+            placeholder="Password"
+            handleChangeText={(e) => setForm({ ...form, password: e })}
+          />
 
-        <FormField
-          title="Re-type the password"
-          value={form.confirmPassword}
-          placeholder="confirm password"
-          handleChangeText={(e) => setForm({ ...form, confirmPassword: e })}
-        />
-        <View className="flex items-center justify-center mt-10">
+          <FormField
+            title="Re-type the password"
+            value={form.confirmPassword}
+            placeholder="confirm password"
+            handleChangeText={(e) => setForm({ ...form, confirmPassword: e })}
+          />
+        </View>
+        <View className="flex items-center justify-center mt-8">
           <CustomButton
-            title="Get Started"
+            title="Create an account"
             containerStyles="w-[174.2px] h-[50px]"
+            textStyles="text-[16px]"
           />
         </View>
       </ScrollView>
