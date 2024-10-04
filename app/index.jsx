@@ -18,14 +18,15 @@ const Onboarding = () => {
     />
     </View>
     
-    <View className="h-1/2">
-    <Text className="text-white my-10 text-[32px] leading-[40px]">
-        <Text style={{ fontWeight: 'bold' }}>Simplify Your</Text>
-        <Text style={{ color: 'yellow' }}> Wallet.</Text>
-        <Text>{'\n'}Unify Your </Text>
-        <Text style={{ fontWeight: 'bold' }}>Finances.</Text>
+    <View className="h-1/2 mt-10">
+    <Text className="text-white text-[32px] leading-[40px]">
+        <Text>Simplify Your</Text>
+        <Text className="font-bold"> Wallet.</Text>{'\n'}
+        <Text className="font-bold">Unify</Text> {""}
+        <Text>Your </Text>
+        <Text>Finances.</Text>
       </Text>
-      <Text className="text-white">
+      <Text className="text-white my-8 text-[14px] leading-[20px]">
       Welcome to seamless centralized banking.{'\n'}
       Manage and track all your cards in one app. 
       </Text>
