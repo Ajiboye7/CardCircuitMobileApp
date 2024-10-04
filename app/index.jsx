@@ -32,7 +32,6 @@ const Onboarding = () => {
       <CustomButton
         title="Get Started"
         handlePress={()=> router.push('/sign-up')}
-
       />
       <View className="flex-row gap-2 pt-5">
           <Text className="text-lg text-gray-100 font-sfPro">Already have an account?</Text>

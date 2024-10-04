@@ -9,7 +9,6 @@ const CustomButton = ({handlePress,textStyles,title,containerStyles}) => {
     className={`bg-secondary rounded-[10px] h-[50px] w-[146px] justify-center items-center ${containerStyles}`}
     >
     <Text className={`text-white font-590 ${textStyles}`}>{title}</Text>
-
     </TouchableOpacity>
   )
 }

@@ -6,12 +6,12 @@ const FormField = ({title, otherStyles, value, placeholder, handleChangeText,key
   return (
     <View className={`mt-5 ${otherStyles}`}>
       <Text className="text-fontColor-gray text-[16px] mb-2">{title}</Text>
-      <View className="bg-white w-[360px] h-[52px] rounded-[10px] border justify-center items-start p-5">
+      <View className="bg-white p-4 w-[360px] h-[52px] rounded-[10px] border justify-center items-start ">
         <TextInput
             value={value}
             placeholder={placeholder}
             placeholderTextColor="#858585"
-            className="text-[16px]"
+            className="text-[16px] text-fontColor-lighGray font-600 "
             onChangeText={handleChangeText}
             keyboardType={keyboardType}
 
