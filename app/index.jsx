@@ -8,25 +8,7 @@ import { Redirect, router,Link } from "expo-router";
 
 const Onboarding = () => {
   return (
-   <SafeAreaView className="bg-primary h-full">
-   <ScrollView contentContainerStyle={{height:"100%"}}>
-    <View>
-    <View className="h-1/2">
-    <Image
-    source={images.indexImage}
-    resizeMode='contain'
-    />
-    </View>
-    
-    <View className="h-1/2 mt-10">
-    <Text className="text-white text-[32px] leading-[40px]">
-        <Text>Simplify Your</Text>
-        <Text className="font-bold"> Wallet.</Text>{'\n'}
-        <Text className="font-bold">Unify</Text> {""}
-        <Text>Your </Text>
-        <Text>Finances.</Text>
-      </Text>
-      <Text className="text-white my-6 text-[14px] leading-[20px]">
+   <Sa-white my-6 text-[14px] leading-[20px]">
       Welcome to seamless centralized banking.{'\n'}
       Manage and track all your cards in one app. 
       </Text>
