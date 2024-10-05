@@ -26,7 +26,7 @@ const Onboarding = () => {
         <Text>Your </Text>
         <Text>Finances.</Text>
       </Text>
-      <Text className="text-white my-8 text-[14px] leading-[20px]">
+      <Text className="text-white my-6 text-[14px] leading-[20px]">
       Welcome to seamless centralized banking.{'\n'}
       Manage and track all your cards in one app. 
       </Text>
@@ -36,7 +36,7 @@ const Onboarding = () => {
       />
       <View className="flex-row gap-2 pt-5">
           <Text className="text-lg text-gray-100 font-sfPro">Already have an account?</Text>
-          <Link href="/home" className="text-secondary text-lg font-psemibold">Log In </Link>
+          <Link href="/sign-in" className="text-secondary text-lg font-psemibold">Log In </Link>
         </View>
     </View>
     </View>
