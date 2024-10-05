@@ -26,7 +26,34 @@ const SignIn = () => {
           />
         </View>
         <Text className="text-white text-[32px] font-600 font-sfProRoundedMedium mb-5">
-          Sign I
+          Sign In into your account
+        </Text>
+        <Text className="text-white text-[14px] leading-[20px] font-light">
+         Sign in to manage and track all your cards today on{" "}
+          <Text className="font-bold">CardCircuit</Text>
+        </Text>
+
+        <View className="">
+          <FormField
+            title="Email Address"
+            value={form.email}
+            placeholder="name@example.com"
+            keyboardType="email-address"
+            handleChangeText={(e) => setForm({ ...form, email: e })}
+          />
+
+          <FormField
+            title="password"
+            value={form.password}
+            placeholder="Password"
+            handleChangeText={(e) => setForm({ ...form, password: e })}
+          />
+        </View>
+        <View className="flex items-center justify-center mt-8">
+          <CustomButton
+            title="Sign In "
+            containerStyles="w-[174.2px] h-[50px]"
+            textStyles="text-[16px]"
           />
         </View>
 
