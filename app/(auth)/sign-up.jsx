@@ -30,7 +30,7 @@ const SignUp = () => {
           <Text className="font-bold">CardCircuit</Text>
         </Text>
 
-        <View className=""
+        <View className="">
           <FormField
             title="First & Last Name"
             value={form.name}
