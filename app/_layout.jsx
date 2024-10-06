@@ -17,7 +17,29 @@ export default function RootLayout() {
     "SF-Pro-Rounded-Black": require('../assets/fonts/SF-Pro-Rounded-Black.otf'),
     "SF-Pro-Rounded-Bold": require('../assets/fonts/SF-Pro-Rounded-Bold.otf'),
     "SF-Pro-Rounded-Heavy": require('../assets/fonts/SF-Pro-Rounded-Heavy.otf'),
-    "SF-Pro-Rounded-Light": require('..
+    "SF-Pro-Rounded-Light": require('../assets/fonts/SF-Pro-Rounded-Light.otf'),
+    "SF-Pro-Rounded-Medium": require('../assets/fonts/SF-Pro-Rounded-Medium.otf'),
+    "SF-Pro-Rounded-Regular": require('../assets/fonts/SF-Pro-Rounded-Regular.otf'),
+    "SF-Pro-Rounded-Semibold": require('../assets/fonts/SF-Pro-Rounded-Semibold.otf'),
+    "SF-Pro-Rounded-Thin": require('../assets/fonts/SF-Pro-Rounded-Thin.otf'),
+    "SF-Pro-Rounded-Ultralight": require('../assets/fonts/SF-Pro-Rounded-Ultralight.otf'),
+    "SF-Pro": require('../assets/fonts/SF-Pro.ttf'),
+    "SF-Pro-Italic": require('../assets/fonts/SF-Pro-Italic.ttf'),
+  });
+
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
+
+  return (
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack>
        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
