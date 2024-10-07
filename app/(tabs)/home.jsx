@@ -15,7 +15,7 @@ const Home = () => {
             </View>
 
             <View className="relative">
-              <Text className="text-white bg-secondary text-[16px] p-2 w-[140px] h-[36px] text-center -ml-2">
+              <Text className="text-white bg-secondary text-[16px] font-sfProRoundedBold p-2 w-[140px] h-[36px] text-center -ml-2">
                 Username
               </Text>
               {/* Inverted curve using absolute positioning */}
@@ -26,24 +26,26 @@ const Home = () => {
         </View>
 
         <View>
-          <Text className="text-white">My Cards </Text>
+          <Text className="text-white text-[32px]  font-sfProRoundedBold">
+            My Cards{" "}
+          </Text>
           <ImageBackground
             source={images.addCardBg}
             resizeMode="cover"
             className="h-[243px] justify-center items-center"
           >
             <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative">
-            <View className="flex justify-center items-center">
-                <Image source={icons.add} />
-                <Text className="text-white">Add a new Card</Text>
+              <View className="justify-center items-center flex-1 gap-5">
+                <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
+                  <Image source={icons.add} />
+                </View>
+
+                <Text className="text-white text-[14px] font-sfPro">Add a new Card</Text>
               </View>
-              <View className=" w-[50px] h-[50px] absolute bottom-5 right-[279px] bg-secondary rounded-full items-center justify-center">
-                <Image
-                  source={icons.arrowLeft}
-                  className="w-[40px] h-[40px]"
-                />
+              <View className=" w-[30px] h-[30px] absolute bottom-5 right-[297px] bg-secondary rounded-full items-center justify-center">
+                <Image source={icons.arrowLeft} className="w-[40px] h-[40px]" />
               </View>
-              <View className="w-[50px] h-[50px] absolute bottom-5 left-[297px] bg-secondary rounded-full items-center justify-center">
+              <View className="w-[30px] h-[30px] absolute bottom-5 left-[297px] bg-secondary rounded-full items-center justify-center">
                 <Image
                   source={icons.arrowRight}
                   className="w-[40px] h-[40px]"
