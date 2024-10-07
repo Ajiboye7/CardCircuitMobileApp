@@ -12,7 +12,7 @@ module.exports = {
         tertiary: {
           DEFAULT: "#808B96", 
           '20': "rgba(128, 139, 150, 0.2)", 
-          '30': "rgba(128, 139, 150, 1)",
+          '30': "rgba(128, 139, 150, 0.3)",
         },
         lightBlue: "#7687DA",
         

@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View className="flex flex-row items-center justify-between px-3">
+        <View className="flex flex-row items-center justify-between px-3 my-5">
           <View className="flex flex-row items-center relative">
             <View className="bg-secondary z-10 w-[40px] h-[40px]  rounded-full p-3 justify-center items-center">
               <Image source={icons.profile} className="w-[30px] h-[30px]" />
@@ -32,24 +32,24 @@ const Home = () => {
             resizeMode="cover"
             className="h-[243px] justify-center items-center"
           >
-
-
-              <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative">
-              <View className="justify-center items-center">
-              <Image 
-                source={icons.add}
-              />
-              <Text className="text-white">Add a new Card</Text>
+            <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative">
+            <View className="flex justify-center items-center">
+                <Image source={icons.add} />
+                <Text className="text-white">Add a new Card</Text>
               </View>
-                <Image 
+              <View className=" w-[50px] h-[50px] absolute bottom-5 right-[279px] bg-secondary rounded-full items-center justify-center">
+                <Image
                   source={icons.arrowLeft}
-                  className="absolute bottom-10 right-[297px]"
+                  className="w-[40px] h-[40px]"
                 />
+              </View>
+              <View className="w-[50px] h-[50px] absolute bottom-5 left-[297px] bg-secondary rounded-full items-center justify-center">
                 <Image
                   source={icons.arrowRight}
-                  className="absolute bottom-10 left-[297px]"
+                  className="w-[40px] h-[40px]"
                 />
               </View>
+            </View>
           </ImageBackground>
         </View>
       </ScrollView>
