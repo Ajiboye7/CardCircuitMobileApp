@@ -17,25 +17,7 @@ const SignIn = () => {
   return (
     <SafeAreaView className="pl-3 pr-1 py-3 h-full mt-8">
       <ScrollView>
-        <View className=" bg-secondary rounded-full w-[40px] h-[40px] justify-center items-center mb-8">
-        <TouchableOpacity></TouchableOpacity>
-          <Image
-            source={icons.arrowLeft}
-            resizeMode="contain"
-            className="w-[30px] h-[30px]"
-          />
-        </View>
-        <Text className="text-white text-[32px] font-600 font-sfProRoundedMedium mb-5">
-          Sign In into your account
-        </Text>
-        <Text className="text-white text-[14px] leading-[20px] font-light">
-         Sign in to manage and track all your cards today on{" "}
-          <Text className="font-bold">CardCircuit</Text>
-        </Text>
-
-        <View className="">
-          <FormField
-            title="Email Address"
+        <View className=" b
             value={form.email}
             placeholder="name@example.com"
             keyboardType="email-address"
