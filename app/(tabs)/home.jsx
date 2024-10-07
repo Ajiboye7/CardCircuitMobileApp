@@ -1,7 +1,6 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Image } from "react-native-web";
 import { icons } from "../../constants";
 
 const Home = () => {
@@ -9,13 +8,16 @@ const Home = () => {
     <SafeAreaView>
       <ScrollView>
         <View>
-          <View>
-            <Image source={icons.profile} />
-            <Text className="text-white">Username</Text>
+        <View className="flex flex-row">
+        <View className="bg-secondary w-[40px] h-[40px] rounded-full p-3 justify-center items-center ">
+            <Image source={icons.profile}
+             className="w-[30px] h-[30px]"/>
           </View>
-          <Image
-            source={icons.notification}
-          />
+          <Text className="text-white bg-secondary p-2 w-[140px] h-[36px]">
+            Username
+          </Text>
+        </View>
+          <Image source={icons.notification} className="w-[30px] h-[30px]" />
         </View>
       </ScrollView>
     </SafeAreaView>
