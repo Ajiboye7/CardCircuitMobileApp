@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "../../constants";
 import { images } from "../../constants";
 import { TouchableOpacity } from "react-native";
+import IconButton from "../../components/IconButton";
 
 const Home = () => {
   return (
@@ -57,8 +58,12 @@ const Home = () => {
           <View>
           </View>
         </View>
-        
 
+        <View>
+       <IconButton
+        iconSource={icons.add}
+       />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
