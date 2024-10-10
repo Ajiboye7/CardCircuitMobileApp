@@ -92,7 +92,7 @@ const Home = () => {
                 </View>
               </TouchableOpacity>
               
-              <View className='absolute left-0 top-[130px]'>
+              <View className='absolute right-[300px] top-[130px]'>
               <TouchableOpacity 
               onPress={handleClick}
               activeOpacity={0.7}
@@ -106,7 +106,7 @@ const Home = () => {
               </View>
               
 
-              <View className='absolute right-0 top-[130px]'>
+              <View className='absolute left-[300px] top-[130px]'>
               <TouchableOpacity 
               onPress={handleClick}
               activeOpacity={0.7}
