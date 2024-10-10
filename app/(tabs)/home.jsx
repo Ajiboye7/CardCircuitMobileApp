@@ -3,6 +3,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "../../constants";
 import { images } from "../../constants";
+import { TouchableOpacity } from "react-native";
 
 const Home = () => {
   return (
@@ -53,10 +54,13 @@ const Home = () => {
               </View>
             </View>
           </ImageBackground>
+          <View>
+          </View>
         </View>
+        
+
       </ScrollView>
     </SafeAreaView>
   );
 };
-
 export default Home;
