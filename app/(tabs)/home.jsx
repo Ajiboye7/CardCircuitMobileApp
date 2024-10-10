@@ -94,7 +94,7 @@ const Home = () => {
               
               <View className='absolute left-0 top-[130px]'>
               <TouchableOpacity>
-              <View>
+              <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center" >
               <Image
                 source={icons.arrowLeft}
                 />
