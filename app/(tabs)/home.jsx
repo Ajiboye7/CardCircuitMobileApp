@@ -5,7 +5,7 @@ import { icons } from "../../constants";
 import { images } from "../../constants";
 import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 const Home = () => {
   return (
     <SafeAreaView>
@@ -42,7 +42,9 @@ const Home = () => {
                   <Image source={icons.add} />
                 </View>
 
-                <Text className="text-white text-[14px] font-sfPro">Add a new Card</Text>
+                <Text className="text-white text-[14px] font-sfPro">
+                  Add a new Card
+                </Text>
               </View>
               <View className=" w-[30px] h-[30px] absolute bottom-5 right-[297px] bg-secondary rounded-full items-center justify-center">
                 <Image source={icons.arrowLeft} className="w-[40px] h-[40px]" />
@@ -55,15 +57,28 @@ const Home = () => {
               </View>
             </View>
           </ImageBackground>
+          <View></View>
+        </View>
+
+        <View className="flex flex-row items-center justify-center gap-4">
           <View>
+            <IconButton iconSource={icons.add} title="Add" />
+          </View>
+
+          <View>
+            <IconButton iconSource={icons.send} title="Send" />
+          </View>
+
+          <View>
+            <IconButton iconSource={icons.scan} title="Scan" />
+          </View>
+
+          <View>
+            <IconButton iconSource={icons.more} title="More" />
           </View>
         </View>
 
-        <View>
-       <IconButton
-        iconSource={icons.add}
-       />
-        </View>
+
       </ScrollView>
     </SafeAreaView>
   );

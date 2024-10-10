@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Alert, Image,Text } from 'react-native';
 
 
 
-const IconButton = (iconSource, onPress, title) => {
+const IconButton = ({iconSource, onPress, title}) => {
   const handleClick = () => {
     Alert.alert("Button clicked!");
     // Add your desired function logic here
@@ -14,15 +14,17 @@ const IconButton = (iconSource, onPress, title) => {
       <TouchableOpacity 
       onPress={handleClick}
       activeOpacity={0.7}>
-      <View className="w-[64px] h-[64px] ">
+      <View>
+        <View className="w-[64px] h-[64px] bg-secondary items-center justify-center rounded-[10px]">
       <Image
         source={iconSource}
         className="w-[24px] h-[24px]"
         />
       </View>
-        
+      </View>
+      
       </TouchableOpacity>
-      <Text className="text-white text-[12px]">{title}</Text>
+      <Text className="text-white text-[12px] text-center mt-2">{title}</Text>
     </View>
   );
 };
