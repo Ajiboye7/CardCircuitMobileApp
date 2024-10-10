@@ -23,7 +23,10 @@ import securitySafe from "../assets/icons/security-safe.png"
 import send  from "../assets/icons/send-2.png"
 import setting from "../assets/icons/setting-2.png"
 import simCard from "../assets/icons/simcard.png"
+import analytics from "../assets/icons/status.png"
 import user from "../assets/icons/user-octagon.png"
+import homeTab from "../assets/icons/homeTab.png"
+import payment from '../assets/icons/payment.png'
 
 
 export default{
@@ -53,4 +56,8 @@ export default{
     setting,
     simCard,
     user,
+    analytics,
+    homeTab,
+    payment,
+    
 };
