@@ -13,11 +13,17 @@ import { images } from "../../constants";
 import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
 import CustomButton from "../../components/CustomButton";
+import { router } from "expo-router";
 const Home = () => {
   const handleClick = () => {
     Alert.alert("Button clicked!");
     // Add your desired function logic here
   };
+
+  const handleAddCard = () => {
+    router.push('/AddCard'); // Make sure this matches the file name in your app folder
+  };
+  
 
   return (
     <SafeAreaView>
@@ -51,7 +57,7 @@ const Home = () => {
 
             <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
 
-              <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+              <TouchableOpacity onPress={handleAddCard} activeOpacity={0.7}>
                 <View className="justify-center items-center flex flex-col gap-3">
                   <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
                     <Image source={icons.add} />

@@ -3,8 +3,8 @@ import React from 'react'
 
 const AddCard = () => {
   return (
-    <View>
-      <Text></Text>
+    <View className=" flex-1 justify-center items-center">
+      <Text className="text-white"> This is add card </Text>
     </View>
   )
 }
