@@ -5,7 +5,7 @@ import { icons } from "../../constants";
 import { images } from "../../constants";
 import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import CustomButton from "../../components/CustomButton"
 const Home = () => {
   return (
     <SafeAreaView>
@@ -78,7 +78,28 @@ const Home = () => {
           </View>
         </View>
 
+        <View className="px-3 mt-5 pb-5">
+          <Text className="text-white text-[32px] font-sfProRoundedBold">
+          Balance
+          </Text>
+          <View className="flex flex-row items-center justify-between my-5">
+            <Text className="text-white">
+            You can monitor your balance in real{'\n'}
+            time. Let’s get you set up!
+            </Text>
+            <CustomButton
+              containerStyles="w-[73px] h-[40px]"
+              title="Set Up"
+            />
+          </View>
+          <Text className="text-white text-[32px] font-sfProRoundedBold mb-3">
+          Today
+          </Text>
 
+          <Text className="text-white text-[14px] font-sfPro mb-4">
+          Add a Card to get all updates on daily transactions. 
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
