@@ -14,13 +14,11 @@ const IconButton = ({iconSource, onPress, title}) => {
       <TouchableOpacity 
       onPress={handleClick}
       activeOpacity={0.7}>
-      <View>
         <View className="w-[64px] h-[64px] bg-secondary items-center justify-center rounded-[10px]">
       <Image
         source={iconSource}
         className="w-[24px] h-[24px]"
         />
-      </View>
       </View>
       
       </TouchableOpacity>
