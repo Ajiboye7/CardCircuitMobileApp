@@ -1,4 +1,11 @@
-import { View, Text, ScrollView, Image, ImageBackground, Alert} from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  ImageBackground,
+  Alert,
+} from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "../../constants";
@@ -7,12 +14,10 @@ import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
 import CustomButton from "../../components/CustomButton";
 const Home = () => {
-
   const handleClick = () => {
     Alert.alert("Button clicked!");
     // Add your desired function logic here
   };
-
 
   return (
     <SafeAreaView>
@@ -43,8 +48,6 @@ const Home = () => {
             resizeMode="cover"
             className="h-[243px] justify-center items-center"
           >
-
-
             {/*<View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative">
               <View className="justify-center items-center flex-1 gap-5">
                 <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
@@ -75,29 +78,31 @@ const Home = () => {
               </View>
             </View>*/}
 
-          <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] ">
+            <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
 
-          <TouchableOpacity 
-          onPress={handleClick}
-          activeOpacity={0.7}
-          >
-          <View className="justify-center items-center flex flex-col gap-5">
-                <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
-                  <Image source={icons.add} />
+              <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                <View className="justify-center items-center flex flex-col gap-3">
+                  <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
+                    <Image source={icons.add} />
+                  </View>
+
+                  <Text className="text-white text-[14px] font-sfPro">
+                    Add a new Card
+                  </Text>
                 </View>
-
-                <Text className="text-white text-[14px] font-sfPro">
-                  Add a new Card
-                </Text>
+              </TouchableOpacity>
+              
+              <View className='absolute left-0 top-[130px]'>
+              <TouchableOpacity>
+              <View>
+              <Image
+                source={icons.arrowLeft}
+                />
               </View>
-
-
-          </TouchableOpacity>
-            
-
-
+              </TouchableOpacity>
+              </View>
+              
             </View>
-
           </ImageBackground>
           <View></View>
         </View>
