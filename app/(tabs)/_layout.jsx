@@ -14,10 +14,10 @@ const TabIcon = ({ icon, color, name, focused }) => {
         source={icon}
         resizeMode="contain"
         tintColor={color}
-        className="w-6 h-6"
+        className="w-[30px] h-[30px]"
       />
       <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`} style= {{color:color}}
+        className={`${focused ? "font-[590px]" : "font-[400px]"} text-xs`} style= {{color:color}}
       >
         {name}
       </Text>
@@ -38,10 +38,15 @@ export default function TabLayout() {
        tabBarActiveTintColor : '#7687DA',
         tabBarInactiveTintColor: '#808B96',
         tabBarStyle:{
-          backgroundColor : '#161622',
+          backgroundColor : '#808B9633',
           borderTopWidth: 1,
           borderTopColor: '#232533',
           height: 84,
+          borderRadius:20,
+          marginBottom:15,
+          marginLeft:10,
+          marginRight:10,
+          height: 98,
         },
         headerShown: false,
         tabBarShowLabel: false
@@ -54,9 +59,9 @@ export default function TabLayout() {
             <TabIcon 
             icon={icons.homeTab}
             name='Home'
-            
+            color={color}
+            focused={focused}
              />
-            
           ),
         }}
       />
@@ -67,6 +72,10 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabIcon 
             icon={icons.payment}
+            name="Payment"
+            color={color}
+            focused={focused}
+            
              />
           ),
         }}
@@ -78,6 +87,9 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabIcon 
             icon={icons.analytics}
+            name="Analytics"
+            color={color}
+            focused={focused}
              />
           ),
         }}
@@ -89,6 +101,9 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <TabIcon 
             icon={icons.user}
+            name="Account"
+            color={color}
+            focused={focused}
              />
           ),
         }}
