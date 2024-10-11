@@ -7,7 +7,7 @@ const ScreensLayout = () => {
     <>
     <Stack>
       <Stack.Screen
-        name="addcard"
+        name="add-card"
         options={{
           headerShown: false,
         }}
