@@ -12,8 +12,9 @@ const AddCard = () => {
         <ImageBackground
         source={images.indexImage}
         resizeMode='cover'
+        className='w-[393px] h-[328px]'
         >
-
+        
         </ImageBackground>
       </View>
     </ScrollView>
