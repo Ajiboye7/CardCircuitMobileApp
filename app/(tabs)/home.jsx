@@ -13,7 +13,6 @@ import { images } from "../../constants";
 import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
 import CustomButton from "../../components/CustomButton";
-import { useNavigation } from '@react-navigation/native'
 import { router } from "expo-router";
 const Home = () => {
   const handleClick = () => {
@@ -21,10 +20,8 @@ const Home = () => {
     // Add your desired function logic here
   };
 
-  const navigation = useNavigation();
-
   const handleAddCard = () => {
-    navigation.navigate('add-card');  // Navigate to AddCard screen
+    router.push('/add-card'); // Make sure this matches the file name in your app folder
   };
   
 
@@ -74,7 +71,7 @@ const Home = () => {
               
               <View className='absolute right-[300px] top-[130px]'>
               <TouchableOpacity 
-              onPress={handleAddCard}
+              onPress={handleClick}
               activeOpacity={0.7}
               >
               <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center" >
