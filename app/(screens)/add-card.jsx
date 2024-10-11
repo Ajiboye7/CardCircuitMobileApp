@@ -14,8 +14,10 @@ const AddCard = () => {
         resizeMode='cover'
         className='w-[393px] h-[328px]'
         >
-        
+
         </ImageBackground>
+
+        <Text>Add Details</Text>
       </View>
     </ScrollView>
    </SafeAreaView>
