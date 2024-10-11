@@ -1,11 +1,23 @@
-import { View, Text } from 'react-native'
+import { View, Text,ScrollView, ImageBackground} from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { images } from '../../constants'
+
 
 const AddCard = () => {
   return (
-    <View className=" flex-1 justify-center items-center">
-      <Text className="text-white"> This is add card </Text>
-    </View>
+   <SafeAreaView>
+    <ScrollView>
+      <View>
+        <ImageBackground
+        source={images.indexImage}
+        resizeMode='cover'
+        >
+
+        </ImageBackground>
+      </View>
+    </ScrollView>
+   </SafeAreaView>
   )
 }
 
