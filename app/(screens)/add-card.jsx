@@ -15,9 +15,13 @@ const AddCard = () => {
   const [expiryDate, setExpiryDate] = useState('');
   const [cvv, setCvv] = useState('');*/
 
-
-
-
+  const [verify, setVerify] =useState({
+    cardNumber: '**** **** **** 3254',
+    cardAlias: 'Primary Savings',
+    cardBalance :'₦500K',
+    expiryDate : '',
+    cvv: '',
+  })
 
 
   return (
@@ -49,6 +53,8 @@ const AddCard = () => {
           <FormField
             placeholder="**** **** **** 325"
             title="Enter Card Number"
+            handleChangeText={(e)=> setVerify({...verify, cardNumber:e })}
+            keyboardType="numeric"
           />
 
           <View className="flex flex-row items-center justify-between">
@@ -56,23 +62,30 @@ const AddCard = () => {
               title="Expiry Date"
               placeholder="07/23"
               inputStyles="w-[151px]"
+              handleChangeText={(e)=> setVerify({...verify, expiryDate:e })}
+              keyboardType="numeric"
             />
             <FormField
               title="CCV"
               placeholder="****"
               inputStyles="w-[151px]"
+              handleChangeText={(e)=> setVerify({...verify, cvv:e })}
+              keyboardType="numeric"
             />
           </View>
 
           <FormField
             title="Enter Card Alias"
             placeholder="e.g Primary Savings"
+            handleChangeText={(e)=> setVerify({...verify, cardAlias:e })}
           />
+
           <View className="mt-10">
           <CustomButton 
             title="Verify Card"
             icon={icons.arrowRight}
             handlePress={()=> router.push('/my-card')}
+            
           />
           </View>
 
