@@ -21,9 +21,8 @@ const Home = () => {
   };
 
   const handleAddCard = () => {
-    router.push('/add-card'); // Make sure this matches the file name in your app folder
+    router.push("/add-card"); // Make sure this matches the file name in your app folder
   };
-  
 
   return (
     <SafeAreaView>
@@ -54,9 +53,7 @@ const Home = () => {
             resizeMode="cover"
             className="h-[243px] justify-center items-center"
           >
-
             <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
-
               <TouchableOpacity onPress={handleAddCard} activeOpacity={0.7}>
                 <View className="justify-center items-center flex flex-col gap-3">
                   <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
@@ -68,35 +65,22 @@ const Home = () => {
                   </Text>
                 </View>
               </TouchableOpacity>
-              
-              <View className='absolute right-[300px] top-[130px]'>
-              <TouchableOpacity 
-              onPress={handleClick}
-              activeOpacity={0.7}
-              >
-              <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center" >
-              <Image
-                source={icons.arrowLeft}
-                />
-              </View>
-              </TouchableOpacity>
-              </View>
-              
 
-              <View className='absolute left-[300px] top-[130px]'>
-              <TouchableOpacity 
-              onPress={handleClick}
-              activeOpacity={0.7}
-              >
-              <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center" >
-              <Image
-                source={icons.arrowRight}
-                />
-              </View>
-              </TouchableOpacity>
+              <View className="absolute right-[300px] top-[130px]">
+                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                    <Image source={icons.arrowLeft} />
+                  </View>
+                </TouchableOpacity>
               </View>
 
-
+              <View className="absolute left-[300px] top-[130px]">
+                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                    <Image source={icons.arrowRight} />
+                  </View>
+                </TouchableOpacity>
+              </View>
             </View>
           </ImageBackground>
           <View></View>
