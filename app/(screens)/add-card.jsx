@@ -20,7 +20,7 @@ const AddCard = () => {
         <Text className="text-white text-[32px] font-sfProRoundedBold">Add Card Details</Text>
 
 
-        <View className="w-[360px]">
+        <View className="w-[360px] mb-20">
           <FormField
             placeholder="**** **** **** 325"
             title="Enter Card Number"
@@ -52,7 +52,7 @@ const AddCard = () => {
 
         </View>
 
-        <View className="absolute right-0 bottom-0 top-[720px] w-[100px] h-[100px]">
+        <View className="absolute right-0 bottom-0">
           <Image
             source={images.RightbuttomImage}
             className=""
