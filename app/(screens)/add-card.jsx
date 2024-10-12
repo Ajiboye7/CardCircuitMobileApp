@@ -21,8 +21,14 @@ const AddCard = () => {
         <Text className="text-white text-[32px] font-sfProRoundedBold">Add Card Details</Text>
         <View>
           <FormField
-            
+            placeholder="**** **** **** 325"
+            title="Enter Card Number"
           />
+
+          <View>
+            <FormField/>
+            <FormField/>
+          </View>
         </View>
       </View>
     </ScrollView>

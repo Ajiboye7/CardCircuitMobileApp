@@ -5,8 +5,8 @@ import React from 'react'
 const FormField = ({title, otherStyles, value, placeholder, handleChangeText,keyboardType}) => {
   return (
     <View className={`mt-5 ${otherStyles}`}>
-      <Text className="text-fontColor-gray text-[16px] mb-2">{title}</Text>
-      <View className="bg-white p-4 w-[360px] h-[52px] rounded-[10px] border justify-center items-start ">
+      <Text className="text-fontColor-gray text-[16px] mb-2 ">{title}</Text>
+      <View className= {`bg-white p-4 w-[360px] h-[52px] rounded-[10px] border justify-center items-start${inputStyles}`}>
         <TextInput
             value={value}
             placeholder={placeholder}
