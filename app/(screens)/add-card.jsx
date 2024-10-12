@@ -3,6 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import FormField from "../../components/FormField";
+import CustomButton from '../../components/CustomButton';
 
 
 const AddCard = () => {
@@ -20,7 +21,7 @@ const AddCard = () => {
 
         <Text className="text-white text-[32px] font-sfProRoundedBold">Add Card Details</Text>
         <View className="w-[360px]">
-        
+
           <FormField
             placeholder="**** **** **** 325"
             title="Enter Card Number"
@@ -42,8 +43,12 @@ const AddCard = () => {
           <FormField
             title="Enter Card Alias"
             placeholder="e.g Primary Savings"
-
           />
+
+          <CustomButton 
+            title="Verify Card"
+          />
+
         </View>
       </View>
     </ScrollView>
