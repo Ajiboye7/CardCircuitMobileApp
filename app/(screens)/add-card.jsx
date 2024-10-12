@@ -1,7 +1,7 @@
 import { View, Text,ScrollView, ImageBackground} from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { images } from '../../constants'
+import { icons, images } from '../../constants'
 import FormField from "../../components/FormField";
 import CustomButton from '../../components/CustomButton';
 
@@ -44,10 +44,13 @@ const AddCard = () => {
             title="Enter Card Alias"
             placeholder="e.g Primary Savings"
           />
-
+          <View className="mt-10">
           <CustomButton 
             title="Verify Card"
+            icon={icons.arrowRight}
           />
+          </View>
+          
 
         </View>
       </View>
