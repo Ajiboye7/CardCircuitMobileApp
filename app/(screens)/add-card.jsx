@@ -14,9 +14,21 @@ const AddCard = () => {
         <ImageBackground
         source={images.indexImage}
         resizeMode='cover'
-        className='w-[393px] h-[328px]'
+        className='w-[393px] h-[328px] justify-center items-center'
         >
+        <View className="w-[313px] h-[180px] bg-tertiary-30 justify-center items-center rounded-[20px] ">
+          <Text className="text-white text-[32px] font-sfProRoundedBold mb-3">₦ ***K</Text>
+          <Text className="text-white text-[16px] font-sfPro mb-3">Primary Savings</Text>
+          <Text className="text-white text-[14px] font-sfPro mb-3">**** **** **** 3254</Text>
+          <View>
+            <Image
+              source={icons.masterCard}
+            />
+          </View>
+        </View>
         </ImageBackground>
+
+
         <Text className="text-white text-[32px] font-sfProRoundedBold">Add Card Details</Text>
 
 
