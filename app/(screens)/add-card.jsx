@@ -1,5 +1,5 @@
 import { View, Text,ScrollView, ImageBackground,Image} from 'react-native'
-import React from 'react'
+import {React, useState} from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images } from '../../constants'
 import FormField from "../../components/FormField";
@@ -8,6 +8,18 @@ import { Redirect, router,Link } from "expo-router";
 
 
 const AddCard = () => {
+
+  /*const [cardNumber, setCardNumber] = useState('**** **** **** 3254');
+  const [cardAlias, setCardAlias] = useState('Primary Savings');
+  const [cardBalance, setCardBalance] = useState('₦500K');
+  const [expiryDate, setExpiryDate] = useState('');
+  const [cvv, setCvv] = useState('');*/
+
+
+
+
+
+
   return (
    <SafeAreaView>
     <ScrollView>
