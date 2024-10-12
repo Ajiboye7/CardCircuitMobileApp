@@ -2,7 +2,7 @@ import { View, Text,TextInput } from 'react-native'
 import React from 'react'
 
 
-const FormField = ({title, otherStyles, value, placeholder, handleChangeText,keyboardType, inputStyles}) => {
+const FormField = ({title, otherStyles, value, placeholder, handleChangeText,keyboardType='default', inputStyles, ...props}) => {
   return (
     <View className={`mt-5 ${otherStyles}`}>
       <Text className="text-fontColor-gray text-[16px] mb-2 ">{title}</Text>

@@ -55,6 +55,7 @@ const AddCard = () => {
             title="Enter Card Number"
             handleChangeText={(e)=> setVerify({...verify, cardNumber:e })}
             keyboardType="numeric"
+            value={verify.cardNumber}
           />
 
           <View className="flex flex-row items-center justify-between">
@@ -64,6 +65,7 @@ const AddCard = () => {
               inputStyles="w-[151px]"
               handleChangeText={(e)=> setVerify({...verify, expiryDate:e })}
               keyboardType="numeric"
+              value={verify.expiryDate}
             />
             <FormField
               title="CCV"
@@ -71,6 +73,7 @@ const AddCard = () => {
               inputStyles="w-[151px]"
               handleChangeText={(e)=> setVerify({...verify, cvv:e })}
               keyboardType="numeric"
+              value={verify.cvv}
             />
           </View>
 
@@ -78,6 +81,7 @@ const AddCard = () => {
             title="Enter Card Alias"
             placeholder="e.g Primary Savings"
             handleChangeText={(e)=> setVerify({...verify, cardAlias:e })}
+            value={verify.cardAlias}
           />
 
           <View className="mt-10">
