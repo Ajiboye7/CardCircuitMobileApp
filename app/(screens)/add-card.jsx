@@ -29,7 +29,7 @@ const AddCard = () => {
         </ImageBackground>
 
 
-        <Text className="text-white text-[32px] font-sfProRoundedBold">Add Card Details</Text>
+        <Text className="text-white text-[32px] font-sfProRoundedBold mt-8">Add Card Details</Text>
 
 
         <View className="w-[360px] mb-20">
