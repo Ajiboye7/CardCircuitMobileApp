@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images } from '../../constants'
 import FormField from "../../components/FormField";
 import CustomButton from '../../components/CustomButton';
+import { Redirect, router,Link } from "expo-router";
 
 
 const AddCard = () => {
@@ -59,6 +60,7 @@ const AddCard = () => {
           <CustomButton 
             title="Verify Card"
             icon={icons.arrowRight}
+            handlePress={()=> router.push('/my-card')}
           />
           </View>
 
@@ -67,7 +69,8 @@ const AddCard = () => {
         <View className="absolute right-0 bottom-0">
           <Image
             source={images.RightbuttomImage}
-            className=""
+
+            
           />
           </View> 
       </View>
