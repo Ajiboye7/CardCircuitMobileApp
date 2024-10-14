@@ -45,17 +45,17 @@ const Analytics = () => {
             resizeMode="cover"
             className="h-[243px] justify-center items-center"
           >
-            <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px]">
+            <View className="bg-tertiary-30 w-[361px] h-[180px] rounded-[20px]">
 
 
-              <View className='flex flex-row justify-center items-center'>
+              <View className='flex flex-row justify-between items-center relative ml-5'>
 
-                <View>
+                <View className=" ">
                   <Text className="text-white text-[32px] font-sfProRoundedBold">₦100K</Text>
-                  <Text className="text-white">spent in the last week</Text>
+                  <Text className="text-white text-[12px] font-sfPro ">spent in the last week</Text>
                 </View>
 
-                <View>
+                <View className="">
 
                   <View className="flex flex-row justify-center items-center gap-1 font-sfPro">
                     <View className="w-[4.85px] h-[4.85px] bg-present rounded-full"></View>
@@ -69,12 +69,12 @@ const Analytics = () => {
 
                 </View>
 
-                <View className="flex flex-row justify-center items-center">
-                  <View className="bg-secondary flex flex-row w-[71px] h-[24px] justify-center items-center">
+                <View className="flex flex-row justify-center items-center fixed right-0 bottom-3">
+                  <View className="bg-secondary flex flex-row w-[71px] h-[24px] justify-center items-center gap-1 mr-[-7px] rounded-l-xl">
                     <Image
                       source={icons.dropDown}
                     />
-                    <Text className="text-white ">Weekly</Text>
+                    <Text className="text-white text-[12px]">Weekly</Text>
                   </View>
 
                   <View className="w-[35px] h-[35px] bg-secondary rounded-full justify-center items-center">
