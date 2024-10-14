@@ -5,6 +5,7 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
+  Alert
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -13,12 +14,16 @@ import IconButton from "../../components/IconButton";
 
 const Analytics = () => {
 
-
+  const data = [
+    { id: '1', name: 'Item 1', price: '$100', imageUrl: images.m },
+    { id: '2', name: 'Item 2', price: '$200', imageUrl: images.item2 }
+  ];
   const handleClick = () => {
     Alert.alert("Button clicked!");
     // Add your desired function logic here
   };
 
+  
 
   return (
     <SafeAreaView>
@@ -46,7 +51,7 @@ const Analytics = () => {
               Analytics
             </Text>
 
-            <Text className="text-blue-600 underline">View Cards</Text>
+            <Text className="text-blue-600 underline">View More</Text>
           </View>
 
           <ImageBackground
@@ -180,6 +185,14 @@ const Analytics = () => {
         </View>
 
 
+        <View>
+
+          <View>
+          <Text className="text-white">Today</Text>
+          <Text className="text-white">See all</Text>
+          </View>
+
+        </View>
 
       </ScrollView>
     </SafeAreaView>
