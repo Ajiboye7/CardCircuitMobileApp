@@ -5,7 +5,8 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-  Alert
+  Alert,
+  FlatList
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -14,9 +15,9 @@ import IconButton from "../../components/IconButton";
 
 const Analytics = () => {
 
-  const data = [
-    { id: '1', name: 'Item 1', price: '$100', imageUrl: images.mtn },
-    { id: '2', name: 'Item 2', price: '$200', imageUrl: images.netflix }
+  const items = [
+    { id: '1', name: 'Aitime', transaction: 'Purchase', price: '-₦5K', imageUrl: images.mtn },
+    { id: '2', name: 'Netflix',transaction: 'Subscribe', price: '-₦15K', imageUrl: images.netflix }
   ];
   const handleClick = () => {
     Alert.alert("Button clicked!");
@@ -192,7 +193,7 @@ const Analytics = () => {
           <Text className="text-white">See all</Text>
           </View>
 
-          <View style={styles.container}>
+          <View>
       <FlatList
         data={items}
         keyExtractor={(item) => item.id}
@@ -200,15 +201,21 @@ const Analytics = () => {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <View>
-            <Image source={{ uri: item.imageUrl }} style={styles.image} />
+            <Image source={item.imageUrl}
+            className="w-[80px] h-[80px]"
+            resizeMode="contain"
+             />
             <View >
-              <Text >{item.name}</Text>
+              <Text className="text-white">{item.name}</Text>
               <Text>{item.price}</Text>
             </View>
+
+            <Text></Text>
           </View>
         )}
       />
     </View>
+
 
         </View>
 
