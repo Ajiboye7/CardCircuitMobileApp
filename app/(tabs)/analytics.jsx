@@ -15,8 +15,8 @@ import IconButton from "../../components/IconButton";
 const Analytics = () => {
 
   const data = [
-    { id: '1', name: 'Item 1', price: '$100', imageUrl: images.m },
-    { id: '2', name: 'Item 2', price: '$200', imageUrl: images.item2 }
+    { id: '1', name: 'Item 1', price: '$100', imageUrl: images.mtn },
+    { id: '2', name: 'Item 2', price: '$200', imageUrl: images.netflix }
   ];
   const handleClick = () => {
     Alert.alert("Button clicked!");
@@ -187,10 +187,28 @@ const Analytics = () => {
 
         <View>
 
-          <View>
+          <View className="flex flex-row justify-between items-center">
           <Text className="text-white">Today</Text>
           <Text className="text-white">See all</Text>
           </View>
+
+          <View style={styles.container}>
+      <FlatList
+        data={items}
+        keyExtractor={(item) => item.id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <View>
+            <Image source={{ uri: item.imageUrl }} style={styles.image} />
+            <View >
+              <Text >{item.name}</Text>
+              <Text>{item.price}</Text>
+            </View>
+          </View>
+        )}
+      />
+    </View>
 
         </View>
 
