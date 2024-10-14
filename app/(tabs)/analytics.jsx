@@ -12,6 +12,14 @@ import { icons, images } from "@/constants";
 import IconButton from "../../components/IconButton";
 
 const Analytics = () => {
+
+
+  const handleClick = () => {
+    Alert.alert("Button clicked!");
+    // Add your desired function logic here
+  };
+
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -155,9 +163,14 @@ const Analytics = () => {
           <Text className='text-white'>₦20K more than last week</Text>
 
           </View>
-
-          <IconButton iconSource={icons.arrowRight} title="Add" />
-
+          
+          <View className="">
+                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                    <Image source={icons.arrowRight} />
+                  </View>
+                </TouchableOpacity>
+              </View>
         </View>
 
       </ScrollView>
