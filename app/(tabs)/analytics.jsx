@@ -186,31 +186,37 @@ const Analytics = () => {
         </View>
 
 
-        <View>
+        <View className="">
 
           <View className="flex flex-row justify-between items-center">
           <Text className="text-white">Today</Text>
           <Text className="text-white">See all</Text>
           </View>
 
-          <View>
+          <View className="">
       <FlatList
         data={items}
         keyExtractor={(item) => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <View>
-            <Image source={item.imageUrl}
+
+          <View className="flex flex-row justify-between items-center bg-white w-[250px] h-[90px]">
+
+          <View className="flex flex-row items-center gap-2">
+
+          <Image source={item.imageUrl}
             className="w-[80px] h-[80px]"
             resizeMode="contain"
              />
             <View >
-              <Text className="text-white">{item.name}</Text>
-              <Text>{item.price}</Text>
+              <Text className="text-primary font-sfPro text-[14px]">{item.name}</Text>
+              <Text className="text-primary font-sfPro text-[12px]">{item.transaction}</Text>
             </View>
 
-            <Text></Text>
+          </View>
+
+            <Text className="text-past text-[16px] font-sfProRoundedBold ">{item.price}</Text>
           </View>
         )}
       />
