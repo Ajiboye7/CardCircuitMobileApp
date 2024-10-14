@@ -45,16 +45,14 @@ const Home = () => {
         </View>
 
         <View>
-        <View className="flex flex-row items-center justify-between px-3">
-        <Text className="text-white text-[32px]  font-sfProRoundedBold">
-            My Cards
-          </Text>
+          <View className="flex flex-row items-center justify-between px-3">
+            <Text className="text-white text-[32px]  font-sfProRoundedBold">
+              My Cards
+            </Text>
 
-          <Text className="text-blue-600 underline">
-            View Cards
-          </Text>
-        </View>
-          
+            <Text className="text-blue-600 underline">View Cards</Text>
+          </View>
+
           <ImageBackground
             source={images.addCardBg}
             resizeMode="cover"
@@ -92,7 +90,6 @@ const Home = () => {
               </View>
             </View>
           </ImageBackground>
-          <View></View>
         </View>
 
         <View className="flex flex-row items-center justify-center gap-4">
