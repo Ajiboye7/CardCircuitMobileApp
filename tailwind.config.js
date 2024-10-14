@@ -22,6 +22,9 @@ module.exports = {
           lightGray :"#585858" ,
           soft: "#DEDEDE",
         },
+
+        present: "#0B8C56",
+        past: "#FF7171",
       },
       fontWeight: {
         510: '510', 

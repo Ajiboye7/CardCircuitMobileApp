@@ -48,23 +48,41 @@ const Analytics = () => {
             <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px]">
 
 
-              <View>
+              <View className='flex flex-row justify-center items-center'>
 
                 <View>
-                  <Text className="text-white">₦100K</Text>
+                  <Text className="text-white text-[32px] font-sfProRoundedBold">₦100K</Text>
                   <Text className="text-white">spent in the last week</Text>
                 </View>
 
                 <View>
-                  <View>
-                    <View></View>
-                    <Text></Text>
+
+                  <View className="flex flex-row justify-center items-center gap-1 font-sfPro">
+                    <View className="w-[4.85px] h-[4.85px] bg-present rounded-full"></View>
+                    <Text className="text-white text-[12px]">This Week</Text>
                   </View>
 
-                  <View>
-                    <View></View>
-                    <Text></Text>
+                  <View className="flex flex-row justify-center items-center gap-1 font-sfPro">
+                  <View className="w-[4.85px] h-[4.85px] bg-past rounded-full"></View>
+                    <Text className="text-white text-[12px] ">Last Week</Text>
                   </View>
+
+                </View>
+
+                <View className="flex flex-row justify-center items-center">
+                  <View className="bg-secondary flex flex-row w-[71px] h-[24px] justify-center items-center">
+                    <Image
+                      source={icons.dropDown}
+                    />
+                    <Text className="text-white ">Weekly</Text>
+                  </View>
+
+                  <View className="w-[35px] h-[35px] bg-secondary rounded-full justify-center items-center">
+                  <Image 
+                    source={icons.calender}
+                  />
+                  </View>
+                 
 
                 </View>
               </View>
