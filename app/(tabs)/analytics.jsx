@@ -6,25 +6,36 @@ import {
   ImageBackground,
   TouchableOpacity,
   Alert,
-  FlatList
+  FlatList,
 } from "react-native";
-import React from "react";
+import {React, useState} from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons, images } from "@/constants";
 import IconButton from "../../components/IconButton";
 
 const Analytics = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null); 
 
   const items = [
-    { id: '1', name: 'Aitime', transaction: 'Purchase', price: '-₦5K', imageUrl: images.mtn },
-    { id: '2', name: 'Netflix',transaction: 'Subscribe', price: '-₦15K', imageUrl: images.netflix }
+    {
+      id: "1",
+      name: "Airtime",
+      transaction: "Purchase",
+      price: "-₦5K",
+      imageUrl: images.mtn,
+    },
+    {
+      id: "2",
+      name: "Netflix",
+      transaction: "Subscribe",
+      price: "-₦15K",
+      imageUrl: images.netflix,
+    },
   ];
   const handleClick = () => {
     Alert.alert("Button clicked!");
     // Add your desired function logic here
   };
-
-  
 
   return (
     <SafeAreaView>
@@ -131,66 +142,50 @@ const Analytics = () => {
                     </View>
                   </View>
 
-
                   <View className="absolute top-4">
+                    <View className="absolute">
+                      <Image source={icons.blueline} />
+                    </View>
 
-                  <View className="absolute">
-                  <Image
-                    source={icons.blueline}
-                  />
+                    <View className="absolute">
+                      <Image source={icons.redline} />
+                    </View>
                   </View>
-                
-
-                <View className="absolute">
-                <Image
-                    source={icons.redline}
-                  />
-                </View>
-                  </View>
-                  
-                  
                 </View>
               </View>
             </View>
           </ImageBackground>
         </View>
 
-
-
         <View className="flex flex-row items-center justify-between w-[361px] h-[90px] bg-secondary rounded-[20px] px-2">
-
           <View className="flex flex-row items-center gap-1">
+            <View className="bg-lightBlue w-[80px] h-[80px] rounded-[20px] justify-center items-center">
+              <Image source={images.cash} className="w-[35px] h-[50px]" />
+            </View>
 
-          <View className="bg-lightBlue w-[80px] h-[80px] rounded-[20px] justify-center items-center">
-          <Image
-            source={images.cash}
-            className="w-[35px] h-[50px]"
-          />
+            <View className="flex gap-1">
+              <Text className="text-white text-[14px] font-sfProRoundedBold">
+                Transactions this week
+              </Text>
+              <Text className="text-white text-fontColor-extraSoft text-[12px]">
+                ₦20K more than last week
+              </Text>
+            </View>
           </View>
 
-          <View className="flex gap-1">
-          <Text className='text-white text-[14px] font-sfProRoundedBold'>Transactions this week</Text>
-          <Text className='text-white text-fontColor-extraSoft text-[12px]'>₦20K more than last week</Text>
-          </View>
-          
-
-          </View>
-          
           <View className="">
-                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
-                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
-                    <Image source={icons.arrowRight} />
-                  </View>
-                </TouchableOpacity>
+            <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+              <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                <Image source={icons.arrowRight} />
               </View>
+            </TouchableOpacity>
+          </View>
         </View>
 
-
         <View className="">
-
           <View className="flex flex-row justify-between items-center">
-          <Text className="text-white">Today</Text>
-          <Text className="text-white">See all</Text>
+            <Text className="text-white">Today</Text>
+            <Text className="text-white">See all</Text>
           </View>
 
           <View className="">
@@ -199,32 +194,39 @@ const Analytics = () => {
         keyExtractor={(item) => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
-        renderItem={({ item }) => (
-
-          <View className="flex flex-row justify-between items-center bg-white w-[250px] h-[90px]">
-
-          <View className="flex flex-row items-center gap-2">
-
-          <Image source={item.imageUrl}
-            className="w-[80px] h-[80px]"
-            resizeMode="contain"
-             />
-            <View >
-              <Text className="text-primary font-sfPro text-[14px]">{item.name}</Text>
-              <Text className="text-primary font-sfPro text-[12px]">{item.transaction}</Text>
+        renderItem={({ item, index }) => (
+          <TouchableOpacity
+            className={`bg-white w-[250px] h-[90px] p-1 pr-3 rounded-[20px] mr-5 ${
+              hoveredIndex === index ? 'shadow-lg' : 'shadow-md'
+            }`}
+            onPressIn={() => setHoveredIndex(index)}
+            onPressOut={() => setHoveredIndex(null)}
+          >
+            <View className="flex flex-row justify-between items-center">
+              <View className="flex flex-row items-center gap-2">
+                <Image
+                  source={item.imageUrl}
+                  className="w-[80px] h-[80px]"
+                  resizeMode="contain"
+                />
+                <View className="flex gap-1">
+                  <Text className="text-primary font-sfProRoundedBold text-[14px]">
+                    {item.name}
+                  </Text>
+                  <Text className="text-primary font-sfPro text-[12px] ">
+                    {item.transaction}
+                  </Text>
+                </View>
+              </View>
+              <Text className="text-past text-[16px] font-sfProRoundedBold ">
+                {item.price}
+              </Text>
             </View>
-
-          </View>
-
-            <Text className="text-past text-[16px] font-sfProRoundedBold ">{item.price}</Text>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
-
-
         </View>
-
       </ScrollView>
     </SafeAreaView>
   );
