@@ -183,9 +183,9 @@ const Analytics = () => {
         </View>
 
         <View className="">
-          <View className="flex flex-row justify-between items-center">
-            <Text className="text-white">Today</Text>
-            <Text className="text-white">See all</Text>
+          <View className="flex flex-row justify-between items-center my-4 mx-2">
+            <Text className="text-white text-[32px] font-sfProRoundedBold">Today</Text>
+            <Text className="text-white text-[14px] underline">See all</Text>
           </View>
 
           <View className="">
@@ -226,6 +226,8 @@ const Analytics = () => {
         )}
       />
     </View>
+
+    <Text className="text-white font-sfProRoundedBold text-[32px] my-4">Goals</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
