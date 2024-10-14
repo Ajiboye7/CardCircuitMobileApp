@@ -30,6 +30,7 @@ import payment from '../assets/icons/payment.png'
 import profile2 from '../assets/icons/Rectangle.png'
 
 
+
 export default{
     addCircle,
     add,

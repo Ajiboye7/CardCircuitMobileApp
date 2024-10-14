@@ -1,14 +1,20 @@
-import { View, Text, ScrollView, Image, ImageBackground, TouchableOpacity} from 'react-native'
-import React from 'react'
-import {  SafeAreaView } from 'react-native-safe-area-context'
-import { icons, images } from '@/constants'
-
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { icons, images } from "@/constants";
 
 const Analytics = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-      <View className="flex flex-row items-center justify-between px-3 my-5">
+        <View className="flex flex-row items-center justify-between px-3 my-5">
           <View className="flex flex-row items-center relative">
             <View className=" z-10 w-[40px] h-[40px]  rounded-full p-3 justify-center items-center">
               <Image source={icons.profile2} className="w-[50px] h-[50px]" />
@@ -25,11 +31,10 @@ const Analytics = () => {
           <Image source={icons.notification} className="w-[30px] h-[30px]" />
         </View>
 
-
         <View>
           <View className="flex flex-row items-center justify-between px-3">
             <Text className="text-white text-[32px]  font-sfProRoundedBold">
-              My Cards
+              Analytics
             </Text>
 
             <Text className="text-blue-600 underline">View Cards</Text>
@@ -40,15 +45,37 @@ const Analytics = () => {
             resizeMode="cover"
             className="h-[243px] justify-center items-center"
           >
-            <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
-              
+            <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px]">
+
+
+              <View>
+
+                <View>
+                  <Text className="text-white">₦100K</Text>
+                  <Text className="text-white">spent in the last week</Text>
+                </View>
+
+                <View>
+                  <View>
+                    <View></View>
+                    <Text></Text>
+                  </View>
+
+                  <View>
+                    <View></View>
+                    <Text></Text>
+                  </View>
+
+                </View>
+              </View>
+
+
             </View>
           </ImageBackground>
         </View>
-
       </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Analytics
+export default Analytics;
