@@ -23,6 +23,16 @@ const AddCard = () => {
     cvv: '',
   })
 
+  const handleVerifyCard = () => {
+    router.push({
+      pathname: '/home',
+      params: {
+        cardNumber: verify.cardNumber,
+        cardAlias: verify.cardAlias,
+        cardBalance: verify.cardBalance,
+      },
+    });
+  };
 
   return (
    <SafeAreaView>
@@ -82,13 +92,14 @@ const AddCard = () => {
             placeholder="e.g Primary Savings"
             handleChangeText={(e)=> setVerify({...verify, cardAlias:e })}
             value={verify.cardAlias}
+            keyboardType='default'
           />
 
           <View className="mt-10">
           <CustomButton 
             title="Verify Card"
             icon={icons.arrowRight}
-            handlePress={()=> router.push('/my-card')}
+            handlePress={handleVerifyCard}
             
           />
           </View>

@@ -14,7 +14,15 @@ import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
 import CustomButton from "../../components/CustomButton";
 import { router } from "expo-router";
+import { useRouter, useLocalSearchParams} from "expo-router";
 const Home = () => {
+
+  const params = useLocalSearchParams();
+  const cardNumber = params.cardNumber || null;
+  const cardAlias = params.cardAlias || null;
+  const cardBalance = params.cardBalance || null;
+
+  
   const handleClick = () => {
     Alert.alert("Button clicked!");
     // Add your desired function logic here
@@ -53,7 +61,40 @@ const Home = () => {
             resizeMode="cover"
             className="h-[243px] justify-center items-center"
           >
-            <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
+            {cardBalance && cardAlias && cardNumber ? (
+              <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
+              <View className="w-[313px] h-[180px] bg-tertiary-30 justify-center items-center rounded-[20px] ">
+                <Text className="text-white text-[32px] font-sfProRoundedBold mb-3">
+                  ₦500K
+                </Text>
+                <Text className="text-white text-[16px] font-sfPro mb-3">
+                  Primary Savings
+                </Text>
+                <Text className="text-white text-[14px] font-sfPro mb-3">
+                  **** **** **** 3254
+                </Text>
+                <View>
+                  <Image source={icons.masterCard} />
+                </View>
+              </View>
+              <View className="absolute right-[300px] top-[130px]">
+                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                    <Image source={icons.arrowLeft} />
+                  </View>
+                </TouchableOpacity>
+              </View>
+
+              <View className="absolute left-[300px] top-[130px]">
+                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                    <Image source={icons.arrowRight} />
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View>
+            ): (
+              <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
               <TouchableOpacity onPress={handleAddCard} activeOpacity={0.7}>
                 <View className="justify-center items-center flex flex-col gap-3">
                   <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
@@ -82,6 +123,12 @@ const Home = () => {
                 </TouchableOpacity>
               </View>
             </View>
+
+            )}
+            
+            
+            
+
           </ImageBackground>
           <View></View>
         </View>
