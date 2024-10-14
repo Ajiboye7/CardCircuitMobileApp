@@ -21,6 +21,7 @@ module.exports = {
           gray: "#858585",  
           lightGray :"#585858" ,
           soft: "#DEDEDE",
+          extraSoft:"#BFCAD6CC"
         },
 
         present: "#0B8C56",

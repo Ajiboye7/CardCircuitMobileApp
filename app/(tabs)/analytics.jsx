@@ -149,18 +149,24 @@ const Analytics = () => {
           </ImageBackground>
         </View>
 
-        <View className="parent">
 
-          <View>
 
-          <View>
+        <View className="flex flex-row items-center justify-between w-[361px] h-[90px] bg-secondary rounded-[20px] px-2">
+
+          <View className="flex flex-row items-center gap-1">
+
+          <View className="bg-lightBlue w-[80px] h-[80px] rounded-[20px] justify-center items-center">
           <Image
             source={images.cash}
+            className="w-[35px] h-[50px]"
           />
           </View>
+
+          <View className="flex gap-1">
+          <Text className='text-white text-[14px] font-sfProRoundedBold'>Transactions this week</Text>
+          <Text className='text-white text-fontColor-extraSoft text-[12px]'>₦20K more than last week</Text>
+          </View>
           
-          <Text className='text-white'>Transactions this week</Text>
-          <Text className='text-white'>₦20K more than last week</Text>
 
           </View>
           
@@ -172,6 +178,8 @@ const Analytics = () => {
                 </TouchableOpacity>
               </View>
         </View>
+
+
 
       </ScrollView>
     </SafeAreaView>
