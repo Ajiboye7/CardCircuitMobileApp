@@ -29,6 +29,8 @@ import homeTab from "../assets/icons/homeTab.png"
 import payment from '../assets/icons/payment.png'
 import profile2 from '../assets/icons/Rectangle.png'
 import line from '../assets/icons/Line.png'
+import blueline from '../assets/icons/accent.png'
+import redline from '../assets/icons/secondary.png'
 
 
 
@@ -63,5 +65,7 @@ export default{
     homeTab,
     payment,
     profile2,
-    line
+    line,
+    redline,
+    blueline
 };

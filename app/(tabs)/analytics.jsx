@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons, images } from "@/constants";
+import IconButton from "../../components/IconButton";
 
 const Analytics = () => {
   return (
@@ -81,9 +82,93 @@ const Analytics = () => {
               </View>
 
               <View className="flex items-center w-full h-full">
-                <View className="border border-solid border-fontColor-gray w-[291px] h-[105px] ">
-                  <View className=" flex flex-row justify-around">
+                <View className="border border-solid border-fontColor-gray w-[291px] h-[105px] mt-2 relative rounded-[10px]">
+                  <View className="flex flex-row justify-between items-end w-full h-full pb-2">
+                    <Text className="text-center w-[41px] text-white">Mon</Text>
 
+                    <View className="relative w-[41px]">
+                      <View className="absolute bottom-0 left-0 h-full border-l   border-fontColor-gray"></View>
+                      <Text className="text-center text-white">Tue</Text>
+                    </View>
+
+                    <View className="relative w-[41px]">
+                      <View className="absolute bottom-0 left-0 h-full border-l border-fontColor-gray"></View>
+                      <Text className="text-center text-white">Wed</Text>
+                    </View>
+
+                    <View className="relative w-[41px]">
+                      <View className="absolute bottom-0 left-0 h-full border-l border-fontColor-gray"></View>
+                      <Text className="text-center text-white">Thu</Text>
+                    </View>
+
+                    <View className="relative w-[41px]">
+                      <View className="absolute bottom-0 left-0 h-full border-l border-fontColor-gray"></View>
+                      <Text className="text-center text-white">Fri</Text>
+                    </View>
+
+                    <View className="relative w-[41px]">
+                      <View className="absolute bottom-0 left-0 h-full border-l border-fontColor-gray"></View>
+                      <Text className="text-center text-white">Sat</Text>
+                    </View>
+
+                    <View className="relative w-[41px]">
+                      <View className="absolute bottom-0 left-0 h-full border-l border-fontColor-gray"></View>
+                      <Text className="text-center text-white">Sun</Text>
+                    </View>
+                  </View>
+
+
+                  <View className="absolute top-4">
+
+                  <View className="absolute">
+                  <Image
+                    source={icons.blueline}
+                  />
+                  </View>
+                
+
+                <View className="absolute">
+                <Image
+                    source={icons.redline}
+                  />
+                </View>
+                  </View>
+                  
+                  
+                </View>
+              </View>
+            </View>
+          </ImageBackground>
+        </View>
+
+        <View className="parent">
+
+          <View>
+
+          <View>
+          <Image
+            source={images.cash}
+          />
+          </View>
+          
+          <Text className='text-white'>Transactions this week</Text>
+          <Text className='text-white'>₦20K more than last week</Text>
+
+          </View>
+
+          <IconButton iconSource={icons.arrowRight} title="Add" />
+
+        </View>
+
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default Analytics;
+
+{
+  /*<View className="">
 
                     <View className="">
                       <Text className="text-white">Mon</Text>
@@ -125,15 +210,5 @@ const Analytics = () => {
                     </View>
                     
 
-                  </View>
-                </View>
-              </View>
-            </View>
-          </ImageBackground>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-export default Analytics;
+                  </View>*/
+}
