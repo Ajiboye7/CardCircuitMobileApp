@@ -81,7 +81,52 @@ const Analytics = () => {
               </View>
 
               <View className="flex items-center w-full h-full">
-                <View className="border border-solid border-fontColor-gray w-[291px] h-[105px] "></View>
+                <View className="border border-solid border-fontColor-gray w-[291px] h-[105px] ">
+                  <View className=" flex flex-row justify-around">
+
+
+                    <View className="">
+                      <Text className="text-white">Mon</Text>
+                     
+                    </View>
+
+                    <View>
+                      <Text className="text-white border-l-4 border-solid border-green-500 ">Tue</Text>
+
+                      <View className=" ">
+                      
+                      </View>
+                      
+                    </View>
+                    
+                    <View>
+                      <Text className="text-white">Wed</Text>
+                      <Image source={icons.line} />
+                    </View>
+                    
+                    <View>
+                      <Text className="text-white">Thu</Text>
+                      <Image source={icons.line} />
+                    </View>
+
+                    <View>
+                      <Text className="text-white">Fri</Text>
+                      <Image source={icons.line} />
+                    </View>
+
+                    <View>
+                      <Text className="text-white">Sat</Text>
+                      <Image source={icons.line} />
+                    </View>
+
+                    <View>
+                      <Text className="text-white">Sun</Text>
+                      <Image source={icons.line} />
+                    </View>
+                    
+
+                  </View>
+                </View>
               </View>
             </View>
           </ImageBackground>

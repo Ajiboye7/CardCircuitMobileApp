@@ -28,6 +28,7 @@ import user from "../assets/icons/user-octagon.png"
 import homeTab from "../assets/icons/homeTab.png"
 import payment from '../assets/icons/payment.png'
 import profile2 from '../assets/icons/Rectangle.png'
+import line from '../assets/icons/Line.png'
 
 
 
@@ -61,5 +62,6 @@ export default{
     analytics,
     homeTab,
     payment,
-    profile2
+    profile2,
+    line
 };
