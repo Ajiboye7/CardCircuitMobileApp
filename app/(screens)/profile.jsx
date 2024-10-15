@@ -28,11 +28,31 @@ const Profile = () => {
             </View>
 
 
-            <View>
-                <View>
-                    <Text></Text>
-                    <Text></Text>
+            <View className="flex gap-4">
+                <View className="flex flex-row justify-between items-center">
+                    <Text className="text-white text-fontColor-light-90">Display Picture</Text>
+                    <Image 
+                        source={icons.profile2}
+                    />
                 </View>
+
+                <View className="flex flex-row justify-between items-center">
+                    <Text className="text-white text-fontColor-light-90">Name</Text>
+                    <Text className="text-white">Ajiboye Muyideen</Text>
+                </View>
+
+                <View className="flex flex-row justify-between items-center">
+                    <Text className="text-white text-fontColor-light-90">Email</Text>
+                    <Text className="text-white">ajiboyemuyideen7@gmail.com</Text>
+                </View>
+                
+
+                <View className="flex flex-row justify-between items-center">
+                    <Text className="text-white text-fontColor-light-90">Phone Number</Text>
+                    <Text className="text-white">08172710973</Text>
+                </View>
+
+                
             </View>
         </ScrollView>
     </SafeAreaView>
