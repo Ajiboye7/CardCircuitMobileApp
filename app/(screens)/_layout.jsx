@@ -19,6 +19,13 @@ const ScreensLayout = () => {
             headerShown: false,
           }}
         />
+
+        <Stack.Screen
+          name="profile"
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
     </>
   );

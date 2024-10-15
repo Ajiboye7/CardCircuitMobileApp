@@ -74,7 +74,7 @@ const Account = () => {
   return (
     <SafeAreaView className=" mt-5">
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="flex flex-row justify-between items-center mb-5 mx-3">
+        <View className="flex flex-row justify-between items-center mb-6 mx-3">
           <View className="flex gap-1">
             <Text className="text-white text-[32px] font-sfProRoundedBold">
               My Account,

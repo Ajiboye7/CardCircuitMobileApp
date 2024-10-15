@@ -25,11 +25,10 @@ const Home = () => {
   
   const handleClick = () => {
     Alert.alert("Button clicked!");
-    // Add your desired function logic here
   };
 
   const handleAddCard = () => {
-    router.push("/add-card"); // Make sure this matches the file name in your app folder
+    router.push("/profile"); 
   };
 
   return (
@@ -160,7 +159,7 @@ const Home = () => {
               You can monitor your balance in real{"\n"}
               time. Let’s get you set up!
             </Text>
-            <CustomButton containerStyles="w-[73px] h-[40px]" title="Set Up" />
+            <CustomButton containerStyles="w-[73px] h-[40px]" title="Set Up"/>
           </View>
           <Text className="text-white text-[32px] font-sfProRoundedBold mb-3">
             Today
