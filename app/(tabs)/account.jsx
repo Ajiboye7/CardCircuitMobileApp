@@ -8,56 +8,56 @@ const account = () => {
   const items = [
     {
       id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      title: "My Account Settings",
+      icon: icons.setting,
     },
 
     {
       id: "2",
-      title: "Airtime",
-      icon: images.mtn,
+      title: "Retrieve Financial Overview",
+      icon: icons.money,
     },
 
     {
-      id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      id: "3",
+      title: "Manage Subscriptions",
+      icon: icons.setting,
     },
     
     {
-      id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      id: "4",
+      title: "Self Help",
+      icon: icons.info,
     },
 
     {
-      id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      id: "5",
+      title: "Security",
+      icon: icons.securitySafe,
     },
 
     {
-      id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      id: "6",
+      title: "Linked Cards",
+      icon: icons.card,
     },
 
     {
-      id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      id: "7",
+      title: "Card Lock",
+      icon: icons.setting,
     },
 
     {
-      id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      id: "8",
+      title: "Contact Us",
+      icon: icons.call,
     },
 
     {
-      id: "1",
-      title: "Airtime",
-      icon: images.mtn,
+      id: "9",
+      title: "Log Out",
+      icon: icons.logOut,
     },
     
     
