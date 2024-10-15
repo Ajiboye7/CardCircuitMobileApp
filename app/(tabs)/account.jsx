@@ -5,6 +5,63 @@ import { icons } from "../../constants";
 
 
 const account = () => {
+  const items = [
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+
+    {
+      id: "2",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+    
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+
+    {
+      id: "1",
+      title: "Airtime",
+      icon: images.mtn,
+    },
+    
+    
+  ];
 
   const [isSwitch1Enabled, setIsSwitch1Enabled] = useState(false);
   const [isSwitch2Enabled, setIsSwitch2Enabled] = useState(false);
