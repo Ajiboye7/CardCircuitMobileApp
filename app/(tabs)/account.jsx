@@ -72,11 +72,9 @@ const Account = () => {
   ];
 
   return (
-    <SafeAreaView className="mx-3 mt-5">
-      <ScrollView
-       showsVerticalScrollIndicator={false}
-      >
-        <View className="flex flex-row justify-between items-center mb-5">
+    <SafeAreaView className=" mt-5">
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View className="flex flex-row justify-between items-center mb-5 mx-3">
           <View className="flex gap-1">
             <Text className="text-white text-[32px] font-sfProRoundedBold">
               My Account,
@@ -88,7 +86,7 @@ const Account = () => {
           <Image source={icons.profile2} />
         </View>
 
-        <View className="flex flex-row justify-between items-center mb-3 text-[14px]">
+        <View className="flex flex-row justify-between items-center mb-3 mx-3 text-[14px]">
           <Text className="text-fontColor-light-90">
             Enable Finger Print/Face ID
           </Text>
@@ -101,7 +99,7 @@ const Account = () => {
           />
         </View>
 
-        <View className="flex flex-row justify-between items-center mb-3 text-[14px]">
+        <View className="flex flex-row justify-between items-center mb-3 mx-3 text-[14px]">
           <Text className="text-fontColor-light-90">
             Show Dashboard Account Balance
           </Text>
@@ -114,31 +112,36 @@ const Account = () => {
           />
         </View>
 
-        <View className="w-[361px] h-[465px] bg-tertiary-20 flex flex-col justify-around px-3">
-        <FlatList
-          data={items}
-          keyExtractor={(item) => item.id}
-          
-          renderItem={({ item, }) => (
-          
-            <TouchableOpacity>
-              <View className="flex flex-row justify-between items-center my-[10px]">
-                <View className="flex flex-row gap-3 ">
+        <View className="w-[361px] h-[465px] bg-tertiary-20 flex flex-col justify-around px-3 py-3 mr-3 ml-2 rounded-[20px]">
+          <FlatList
+            data={items}
+            keyExtractor={(item) => item.id}
+            contentContainerStyle={{
+              flexGrow: 1,
+              justifyContent: "space-around",
+            }}
+            renderItem={({ item, index }) => (
+              <TouchableOpacity>
+                <View className="flex flex-row justify-between items-center ">
+                  <View className="flex flex-row gap-3 items-center">
+                  <View className="bg-tertiary-20 w-[30px] h-[30px] rounded-full justify-center items-center">
                   <Image source={item.icon} />
-                  <Text className="text-white text-[14px]">{item.title}</Text>
-                </View>
+                  </View>
+                  <Text
+              className={`text-[14px] ${
+                index === items.length - 1
+                  ? "text-past"
+                  : "text-fontColor-light-90"
+              }`}
+            >{item.title}</Text>
+                  </View>
 
-                <Image source={icons.arrow} />
-              </View>
-            </TouchableOpacity>
-        
-              
-          
-            
-          )}
-        />
+                  <Image source={icons.arrow} />
+                </View>
+              </TouchableOpacity>
+            )}
+          />
         </View>
-        
       </ScrollView>
     </SafeAreaView>
   );
