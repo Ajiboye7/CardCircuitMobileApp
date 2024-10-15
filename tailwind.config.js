@@ -17,7 +17,11 @@ module.exports = {
         lightBlue: "#7687DA",
         
         fontColor: {
-          light: "#F0F0F0",  
+          light:{
+            DEFAULT: "#F0F0F0",
+            '90'  : "rgba(240, 240, 240, 0.9)",
+          },
+          
           gray: "#858585",  
           lightGray :"#585858" ,
           soft: "#DEDEDE",
