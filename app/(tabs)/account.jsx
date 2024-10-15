@@ -73,7 +73,9 @@ const Account = () => {
 
   return (
     <SafeAreaView className="mx-3 mt-5">
-      <ScrollView>
+      <ScrollView
+       showsVerticalScrollIndicator={false}
+      >
         <View className="flex flex-row justify-between items-center mb-5">
           <View className="flex gap-1">
             <Text className="text-white text-[32px] font-sfProRoundedBold">
@@ -112,22 +114,31 @@ const Account = () => {
           />
         </View>
 
+        <View className="w-[361px] h-[465px] bg-tertiary-20 flex flex-col justify-around px-3">
         <FlatList
           data={items}
           keyExtractor={(item) => item.id}
-          renderItem={({ item, index }) => (
+          
+          renderItem={({ item, }) => (
+          
             <TouchableOpacity>
-              <View className="flex flex-row justify-between items-center">
+              <View className="flex flex-row justify-between items-center my-[10px]">
                 <View className="flex flex-row gap-3 ">
                   <Image source={item.icon} />
-                  <Text className="text-white">{item.title}</Text>
+                  <Text className="text-white text-[14px]">{item.title}</Text>
                 </View>
 
                 <Image source={icons.arrow} />
               </View>
             </TouchableOpacity>
+        
+              
+          
+            
           )}
         />
+        </View>
+        
       </ScrollView>
     </SafeAreaView>
   );
