@@ -31,6 +31,7 @@ import profile2 from '../assets/icons/Rectangle.png'
 import line from '../assets/icons/Line.png'
 import blueline from '../assets/icons/accent.png'
 import redline from '../assets/icons/secondary.png'
+import arrow from '../assets/icons/Chevron Left.png'
 
 
 
@@ -67,5 +68,6 @@ export default{
     profile2,
     line,
     redline,
-    blueline
+    blueline,
+    arrow,
 };
