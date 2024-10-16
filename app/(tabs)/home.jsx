@@ -106,25 +106,7 @@ const Home = () => {
                 </View>
               </TouchableOpacity>
 
-              <View className="absolute right-[300px] top-[130px]">
-                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
-                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
-                    <Image source={icons.arrowLeft} />
-                  </View>
-                </TouchableOpacity>
-              </View>
-
-              <View className="absolute left-[300px] top-[130px]">
-                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
-                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
-                    <Image source={icons.arrowRight} />
-                  </View>
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            )}
-            
+        
             
             
 
