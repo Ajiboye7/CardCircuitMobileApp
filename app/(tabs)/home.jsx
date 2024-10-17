@@ -126,7 +126,6 @@ const Home = () => {
             )}
             
             
-            
 
           </ImageBackground>
           <View></View>
