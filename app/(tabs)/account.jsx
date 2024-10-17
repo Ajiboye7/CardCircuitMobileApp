@@ -80,7 +80,7 @@ const Account = () => {
               My Account,
             </Text>
             <Text className="text-fontColor-light-90 text-[12px]">
-              Username
+              Ajiboye
             </Text>
           </View>
           <Image source={icons.profile2} />

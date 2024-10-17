@@ -63,7 +63,7 @@ const payments = () => {
 
             <View className="relative">
               <Text className="text-white bg-secondary text-[16px] font-sfProRoundedBold p-2 w-[140px] h-[36px] text-center -ml-2 !rounded-r-[10px]">
-                Username
+                Ajiboye
               </Text>
               {/* Inverted curve using absolute positioning */}
               <View className="absolute bg-primary w-[25px] h-[36px] rounded-r-full right-32 top-0"></View>

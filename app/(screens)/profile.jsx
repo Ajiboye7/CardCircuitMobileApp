@@ -33,7 +33,7 @@ const Profile = () => {
 
           <View className="flex flex-row justify-between items-center border-b border-fontColor-gray pb-5 mb-5">
             <Text className="text-white text-fontColor-light-90">Name</Text>
-            <Text className="text-white font-sfProRoundedBold">Ajiboye Muyideen</Text>
+            <Text className="text-white font-sfProRoundedBold">Ajiboye</Text>
           </View>
 
           <View className="flex flex-row justify-between items-center border-b border-fontColor-gray pb-5 mb-5">
