@@ -11,30 +11,7 @@ import {
 import {React, useState} from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons, images } from "@/constants";
-import IconButton from "../../components/IconButton";
-
-const Analytics = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null); 
-
-  const items = [
-    {
-      id: "1",
-      name: "Airtime",
-      transaction: "Purchase",
-      price: "-₦5K",
-      imageUrl: images.mtn,
-    },
-    {
-      id: "2",
-      name: "Netflix",
-      transaction: "Subscribe",
-      price: "-₦15K",
-      imageUrl: images.netflix,
-    },
-  ];
-  const handleClick = () => {
-    Alert.alert("Button clicked!");
-    // Add your desired function logic here
+import IconButton from "../../
   };
 
   return (
