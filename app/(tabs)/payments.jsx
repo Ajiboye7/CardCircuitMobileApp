@@ -17,38 +17,36 @@ const payments = () => {
       id: "2",
       title:"Send or Receive Money",
       description: "Local and international money transfers",
-      icon: icons.
+      icon: icons.pay
     },
 
     {
       id: "3",
-      title:"Transfer between Cards",
+      title:"Make QR Payments",
       description: "Move money swiftly between cards",
-      icon: icons.swap
+      icon: icons.scan
     },
     
 
     {
       id: "4",
-      title:"Transfer between Cards",
-      description: "Move money swiftly between cards",
-      icon: icons.swap
+      title:"Send or Receive Money",
+      description: "Local and international money transfers",
+      icon: icons.pay
     },
-    
-
     {
       id: "5",
-      title:"Transfer between Cards",
-      description: "Move money swiftly between cards",
-      icon: icons.swap
+      title:"Manage Subscriptions",
+      description: "Manage and automate your subscriptions",
+      icon: icons.subscription
     },
     
 
     {
       id: "6",
-      title:"Transfer between Cards",
-      description: "Move money swiftly between cards",
-      icon: icons.swap
+      title:"Utility Bills and Payments",
+      description: "Make your utility payments effortlessly",
+      icon: icons.utility
     },
     
     
