@@ -8,7 +8,7 @@ import CustomButton from "../../components/CustomButton";
 const Profile = () => {
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex flex-row justify-between items-center mt-5 mx-3">
           <View className="bg-secondary w-[30px] h-[30px] rounded-full">
             <Image source={icons.arrowLeft} />

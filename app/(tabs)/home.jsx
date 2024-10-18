@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex flex-row items-center justify-between px-3 my-5">
           <View className="flex flex-row items-center relative">
             <View className="bg-secondary z-10 w-[40px] h-[40px]  rounded-full p-3 justify-center items-center">
