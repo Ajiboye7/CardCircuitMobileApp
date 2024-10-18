@@ -15,13 +15,14 @@ module.exports = {
           '30': "rgba(128, 139, 150, 0.6)",
         },
         lightBlue: "#7687DA",
+        darkBlue: "#5970BF",
         
         fontColor: {
           light:{
             DEFAULT: "#F0F0F0",
             '90'  : "rgba(240, 240, 240, 0.9)",
           },
-          
+
           gray: "#858585",  
           lightGray :"#585858" ,
           soft: "#DEDEDE",

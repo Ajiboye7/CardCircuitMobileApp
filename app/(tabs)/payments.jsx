@@ -8,7 +8,7 @@ const payments = () => {
   const paymentData = [
     {
       id: "1",
-      title: "Transfer between Cards",
+      title: " Transfer between{'\n'}Cards",
       description: "Move money swiftly between cards",
       icon: icons.swap,
     },
@@ -74,15 +74,16 @@ const payments = () => {
         <FlatList
           data={paymentData}
           keyExtractor={(item) => item.id} 
+          numColumns={2}
           renderItem={(
             { item } 
           ) => (
-            <View className="bg-tertiary-20">
+            <View className="bg-tertiary-20 w-[175px] h-[170px]">
               <Image
                 source={item.icon} 
               />
-              <Text className="text-white">{item.title}</Text>
-              <Text className="text-white">{item.description}</Text>
+              <Text className=" text-[14px] text-darkBlue">{item.title}</Text>
+              <Text className="text-white text-[12px]">{item.description}</Text>
             </View>
           )}
         />
