@@ -33,6 +33,7 @@ import blueline from '../assets/icons/accent.png'
 import redline from '../assets/icons/secondary.png'
 import arrow from '../assets/icons/Chevron Left.png'
 import pay from '../assets/icons/send-3.png'
+import scan2 from '../assets/icons/scan-2.png'
 
 
 
@@ -71,5 +72,6 @@ export default{
     redline,
     blueline,
     arrow,
-    pay
+    pay,
+    scan2
 };

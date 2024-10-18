@@ -1,57 +1,52 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, FlatList } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "../../constants";
 
-const payments = () => {
 
-  const paymentData =[
+const payments = () => {
+  const paymentData = [
     {
       id: "1",
-      title:"Transfer between Cards",
+      title: "Transfer between Cards",
       description: "Move money swiftly between cards",
-      icon: icons.swap
+      icon: icons.swap,
     },
 
     {
       id: "2",
-      title:"Send or Receive Money",
+      title: "Send or Receive Money",
       description: "Local and international money transfers",
-      icon: icons.pay
+      icon: icons.pay,
     },
 
     {
       id: "3",
-      title:"Make QR Payments",
+      title: "Make QR Payments",
       description: "Move money swiftly between cards",
-      icon: icons.scan
+      icon: icons.scan2,
     },
-    
 
     {
       id: "4",
-      title:"Send or Receive Money",
+      title: "Send or Receive Money",
       description: "Local and international money transfers",
-      icon: icons.pay
+      icon: icons.pay,
     },
     {
       id: "5",
-      title:"Manage Subscriptions",
+      title: "Manage Subscriptions",
       description: "Manage and automate your subscriptions",
-      icon: icons.subscription
+      icon: icons.subscription,
     },
-    
 
     {
       id: "6",
-      title:"Utility Bills and Payments",
+      title: "Utility Bills and Payments",
       description: "Make your utility payments effortlessly",
-      icon: icons.utility
+      icon: icons.utility,
     },
-    
-    
-    
-  ]
+  ];
   return (
     <SafeAreaView>
       <ScrollView>
@@ -76,8 +71,21 @@ const payments = () => {
           payments
         </Text>
 
-
-
+        <FlatList
+          data={paymentData}
+          keyExtractor={(item) => item.id} 
+          renderItem={(
+            { item } 
+          ) => (
+            <View className="bg-tertiary-20">
+              <Image
+                source={item.icon} 
+              />
+              <Text className="text-white">{item.title}</Text>
+              <Text className="text-white">{item.description}</Text>
+            </View>
+          )}
+        />
       </ScrollView>
     </SafeAreaView>
   );
