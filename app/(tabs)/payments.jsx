@@ -49,7 +49,9 @@ const payments = () => {
   ];
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView 
+      showsVerticalScrollIndicator={false}
+      >
         <View className="flex flex-row items-center justify-between px-3 my-5">
           <View className="flex flex-row items-center relative">
             <View className=" z-10 w-[40px] h-[40px]  rounded-full p-3 justify-center items-center">
@@ -71,17 +73,18 @@ const payments = () => {
           payments
         </Text>
 
+        <View className="">
         <FlatList
           data={paymentData}
           keyExtractor={(item) => item.id}
           numColumns={2}
           renderItem={({ item }) => (
-            <View className="bg-tertiary-20 w-[175px] h-[170px] rounded-[20px]">
+            <View className="bg-tertiary-20 w-[175px] h-[170px] rounded-[20px] px-4 py-4 m-[5.5px]">
               <View className="w-[40px] h-[40px] bg-secondary-custom rounded-full justify-center items-center">
                 <Image source={item.icon} />
               </View>
 
-              <Text className=" text-[14px] text-darkBlue leading-[20px]">
+              <Text className=" text-[14px] text-darkBlue leading-[20px] my-2">
                 {item.title}
               </Text>
               <Text className="text-white text-[12px] leading-[20px]">
@@ -90,6 +93,8 @@ const payments = () => {
             </View>
           )}
         />
+        </View>
+        
       </ScrollView>
     </SafeAreaView>
   );
