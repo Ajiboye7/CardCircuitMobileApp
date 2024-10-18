@@ -8,42 +8,42 @@ const payments = () => {
   const paymentData = [
     {
       id: "1",
-      title: " Transfer between{'\n'}Cards",
-      description: "Move money swiftly between cards",
+      title: " Transfer between \n Cards",
+      description: "Move money swiftly \n between cards",
       icon: icons.swap,
     },
 
     {
       id: "2",
-      title: "Send or Receive Money",
-      description: "Local and international money transfers",
+      title: "Send or Receive \n Money",
+      description: "Local and international \n money transfers",
       icon: icons.pay,
     },
 
     {
       id: "3",
-      title: "Make QR Payments",
-      description: "Move money swiftly between cards",
+      title: "Make QR \n Payments",
+      description: "Move money swiftly \n between cards",
       icon: icons.scan2,
     },
 
     {
       id: "4",
-      title: "Send or Receive Money",
-      description: "Local and international money transfers",
+      title: "Send or Receive \n Money",
+      description: "Local and international \n money transfers",
       icon: icons.pay,
     },
     {
       id: "5",
-      title: "Manage Subscriptions",
-      description: "Manage and automate your subscriptions",
+      title: "Manage \n Subscriptions",
+      description: "Manage and automate \n your subscriptions",
       icon: icons.subscription,
     },
 
     {
       id: "6",
-      title: "Utility Bills and Payments",
-      description: "Make your utility payments effortlessly",
+      title: "Utility Bills and \n Payments",
+      description: "Make your utility \n payments effortlessly",
       icon: icons.utility,
     },
   ];
