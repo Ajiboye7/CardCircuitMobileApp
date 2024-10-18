@@ -3,47 +3,47 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "../../constants";
 
-
 const payments = () => {
   const paymentData = [
     {
       id: "1",
-      title: " Transfer between \n Cards",
-      description: "Move money swiftly \n between cards",
+      title: "Transfer between \nCards",
+      description: "Move money swiftly \nbetween cards",
       icon: icons.swap,
     },
 
     {
       id: "2",
-      title: "Send or Receive \n Money",
-      description: "Local and international \n money transfers",
+      title: "Send or Receive \nMoney",
+      description: "Local and international \nmoney transfers",
       icon: icons.pay,
     },
 
     {
       id: "3",
-      title: "Make QR \n Payments",
-      description: "Move money swiftly \n between cards",
-      icon: icons.scan2,
+      title: "Airtime and Data \nPurchase",
+      description: "Buy airtime and data \nfor all local networks",
+      icon: icons.simCard,
     },
 
     {
       id: "4",
-      title: "Send or Receive \n Money",
-      description: "Local and international \n money transfers",
+      title: "Manage \nSubscriptions",
+      description: "Manage and automate \nyour subscriptions",
       icon: icons.pay,
     },
+
     {
       id: "5",
-      title: "Manage \n Subscriptions",
-      description: "Manage and automate \n your subscriptions",
-      icon: icons.subscription,
+      title: "Make QR \nPayments",
+      description: "Move money swiftly \nbetween cards",
+      icon: icons.scan2,
     },
 
     {
       id: "6",
-      title: "Utility Bills and \n Payments",
-      description: "Make your utility \n payments effortlessly",
+      title: "Utility Bills and \nPayments",
+      description: "Make your utility \npayments effortlessly",
       icon: icons.utility,
     },
   ];
@@ -73,17 +73,20 @@ const payments = () => {
 
         <FlatList
           data={paymentData}
-          keyExtractor={(item) => item.id} 
+          keyExtractor={(item) => item.id}
           numColumns={2}
-          renderItem={(
-            { item } 
-          ) => (
-            <View className="bg-tertiary-20 w-[175px] h-[170px]">
-              <Image
-                source={item.icon} 
-              />
-              <Text className=" text-[14px] text-darkBlue">{item.title}</Text>
-              <Text className="text-white text-[12px]">{item.description}</Text>
+          renderItem={({ item }) => (
+            <View className="bg-tertiary-20 w-[175px] h-[170px] rounded-[20px]">
+              <View className="w-[40px] h-[40px] bg-secondary-custom rounded-full justify-center items-center">
+                <Image source={item.icon} />
+              </View>
+
+              <Text className=" text-[14px] text-darkBlue leading-[20px]">
+                {item.title}
+              </Text>
+              <Text className="text-white text-[12px] leading-[20px]">
+                {item.description}
+              </Text>
             </View>
           )}
         />
