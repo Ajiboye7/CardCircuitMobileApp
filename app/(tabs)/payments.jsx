@@ -69,7 +69,7 @@ const payments = () => {
           <Image source={icons.notification} className="w-[30px] h-[30px]" />
         </View>
 
-        <Text className="text-white text-[32px]  font-sfProRoundedBold">
+        <Text className="text-white text-[32px] font-sfProRoundedBold mb-2">
           payments
         </Text>
 
