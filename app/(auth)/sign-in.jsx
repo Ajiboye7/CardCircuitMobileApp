@@ -59,7 +59,7 @@ const SignIn = () => {
 
         <View className="flex-row\ gap-2 pt-5">
           <Text className="text-lg text-gray-100 font-sfPro">Don't have an account ?</Text>
-          <Link href="/sign-in" className="text-secondary text-lg">Sign Up </Link>
+          <Link href="/sign-up" className="text-secondary text-lg">Sign Up </Link>
         </View>
 
       </ScrollView>
