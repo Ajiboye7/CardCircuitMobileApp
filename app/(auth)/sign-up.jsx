@@ -4,13 +4,26 @@ import React, { useState } from "react";
 import { icons } from "../../constants";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
-const SignUp = () => {
+import axios from "axios";
+const SignUp = ({navigation}) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
+  const handleSignUp = async(e)=>{
+    e.preventDefault();
+    try{
+      const response = await axios.post('/user/sign-up', {name, email, password, retypePassword})
+
+      return response.data
+      navigation.navigate('/sign-up')
+    }catch(error){
+      console.log('An error occurred. Please try again.')
+    }
+  }
 
   return (
     <SafeAreaView className="pl-3 pr-1 py-3 h-full mt-8">
@@ -65,6 +78,7 @@ const SignUp = () => {
             title="Create an account"
             containerStyles="w-[174.2px] h-[50px]"
             textStyles="text-[16px]"
+            onPress = {handleSignUp}
           />
         </View>
       </ScrollView>
