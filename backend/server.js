@@ -6,6 +6,8 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+app.use('/user', userRoute);
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT, () => {
