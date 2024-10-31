@@ -1,12 +1,15 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const userRoute = require('./routes/userRoute');
 
+const app = express();
 
-const app = express()
+app.use(express.json()); 
 
 app.use('/user', userRoute);
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
@@ -17,5 +20,3 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
   });
-
-

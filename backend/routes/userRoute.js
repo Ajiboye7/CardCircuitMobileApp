@@ -4,7 +4,8 @@ const express = require('express')
 
 const router = express.Router()
 
-router.post('/sign-in', signInUser)
-router.post('sign-up', signUpUser)
+router.post('/signIn', signInUser)
+router.post('/signUp', signUpUser)
+
 
 module.exports = router

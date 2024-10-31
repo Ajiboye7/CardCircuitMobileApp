@@ -1,11 +1,13 @@
-import { Text, View, Image, ScrollView } from "react-native";
+import { Text, View, Image, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState } from "react";
+import axios from "axios";
 import { icons } from "../../constants";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
-import axios from "axios";
-const SignUp = ({navigation}) => {
+import { useRouter } from "expo-router";
+
+const SignUp = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -13,22 +15,29 @@ const SignUp = ({navigation}) => {
     confirmPassword: "",
   });
 
-  const handleSignUp = async(e)=>{
-    e.preventDefault();
-    try{
-      const response = await axios.post('/user/sign-up', {name, email, password, retypePassword})
+  const router = useRouter();
 
-      return response.data
-      navigation.navigate('/sign-up')
-    }catch(error){
-      console.log('An error occurred. Please try again.')
+  const handleSignUp = async () => {
+    try {
+      const response = await axios.post("http://192.168.0.3:4000/user/signUp", {
+        name: form.name,
+        email: form.email,
+        password: form.password,
+        retypePassword: form.confirmPassword,
+      });
+
+      Alert.alert("Success", "Account created successfully!");
+      router.replace("/home");
+    } catch (error) {
+      console.error("Sign-up error:", error);
+      Alert.alert("Error", error.response?.data?.error || "Sign-up failed.");
     }
-  }
+  };
 
   return (
     <SafeAreaView className="pl-3 pr-1 py-3 h-full mt-8">
       <ScrollView>
-        <View className=" bg-secondary rounded-full w-[40px] h-[40px] justify-center items-center mb-8">
+        <View className="bg-secondary rounded-full w-[40px] h-[40px] justify-center items-center mb-8">
           <Image
             source={icons.arrowLeft}
             resizeMode="contain"
@@ -43,7 +52,7 @@ const SignUp = ({navigation}) => {
           <Text className="font-bold">CardCircuit</Text>
         </Text>
 
-        <View className="">
+        <View>
           <FormField
             title="First & Last Name"
             value={form.name}
@@ -63,13 +72,15 @@ const SignUp = ({navigation}) => {
             title="Create a password"
             value={form.password}
             placeholder="Password"
+            secureTextEntry={true} 
             handleChangeText={(e) => setForm({ ...form, password: e })}
           />
 
           <FormField
             title="Re-type the password"
             value={form.confirmPassword}
-            placeholder="confirm password"
+            placeholder="Confirm password"
+            secureTextEntry={true} 
             handleChangeText={(e) => setForm({ ...form, confirmPassword: e })}
           />
         </View>
@@ -78,7 +89,7 @@ const SignUp = ({navigation}) => {
             title="Create an account"
             containerStyles="w-[174.2px] h-[50px]"
             textStyles="text-[16px]"
-            onPress = {handleSignUp}
+            handlePress={handleSignUp}
           />
         </View>
       </ScrollView>
