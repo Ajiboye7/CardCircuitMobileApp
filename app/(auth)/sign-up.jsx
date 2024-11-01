@@ -1,11 +1,11 @@
 import { Text, View, Image, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useState } from "react";
-import axios from "axios";
-import { icons } from "../../constants";
+import { useRouter } from "expo-router";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
-import { useRouter } from "expo-router";
+import { icons } from "../../constants";
+import useSignUp from "../../context/useSignUp";
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -16,16 +16,21 @@ const SignUp = () => {
   });
 
   const router = useRouter();
+  const { register } = useSignUp();
 
   const handleSignUp = async () => {
+    if (form.password !== form.confirmPassword) {
+      Alert.alert("Error", "Passwords do not match.");
+      return;
+    }
+
     try {
-      const response = await axios.post("http://192.168.0.3:4000/user/signUp", {
+      await register({
         name: form.name,
         email: form.email,
         password: form.password,
         retypePassword: form.confirmPassword,
       });
-
       Alert.alert("Success", "Account created successfully!");
       router.replace("/home");
     } catch (error) {
@@ -48,7 +53,7 @@ const SignUp = () => {
           Let's Get Started
         </Text>
         <Text className="text-white text-[14px] leading-[20px] font-light">
-          Register to manage and track all your cards today on{" "}
+          Register to manage and track all your cards today on
           <Text className="font-bold">CardCircuit</Text>
         </Text>
 
@@ -59,7 +64,6 @@ const SignUp = () => {
             placeholder="John Doe"
             handleChangeText={(e) => setForm({ ...form, name: e })}
           />
-
           <FormField
             title="Email Address"
             value={form.email}
@@ -67,20 +71,18 @@ const SignUp = () => {
             keyboardType="email-address"
             handleChangeText={(e) => setForm({ ...form, email: e })}
           />
-
           <FormField
             title="Create a password"
             value={form.password}
             placeholder="Password"
-            secureTextEntry={true} 
+            secureTextEntry={true}
             handleChangeText={(e) => setForm({ ...form, password: e })}
           />
-
           <FormField
             title="Re-type the password"
             value={form.confirmPassword}
             placeholder="Confirm password"
-            secureTextEntry={true} 
+            secureTextEntry={true}
             handleChangeText={(e) => setForm({ ...form, confirmPassword: e })}
           />
         </View>
