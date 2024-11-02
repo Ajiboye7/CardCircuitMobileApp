@@ -3,7 +3,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const useSignUp = () => {
-  const { dispatch } = useAuth(); 
+  const { dispatch } = useAuth();
 
   const register = async ({ name, email, password, retypePassword }) => {
     dispatch({ type: "SET_LOADING" });
