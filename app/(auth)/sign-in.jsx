@@ -18,17 +18,6 @@ const SignIn = () => {
   
   const {logIn} = useSignIn()
   const handleSignIn = async () => {
-    /*try {
-      const response = await axios.post("http://192.168.100.12:4000/user/signIn", {
-        email: form.email,
-        password: form.password,
-      });
-
-      Alert.alert("Success", "Signed in successfully!");
-      router.replace("/home");
-    } catch (error) {
-      Alert.alert("Error", error.response?.data?.error || "Sign-in failed.");
-    }*/
 
       try{
         await logIn({
