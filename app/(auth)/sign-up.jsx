@@ -13,7 +13,7 @@ const SignUp = () => {
     email: "",
     password: "",
     confirmPassword: "",
-  });
+  }); 
 
   const router = useRouter();
   const { register } = useSignUp();

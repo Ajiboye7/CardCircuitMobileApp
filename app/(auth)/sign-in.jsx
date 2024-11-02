@@ -6,6 +6,7 @@ import { icons } from "../../constants";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { useRouter, Link } from "expo-router";
+import useSignIn from "../../context/useSignIn";
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -14,21 +15,32 @@ const SignIn = () => {
   });
 
   const router = useRouter();
-
+  
+  const {logIn} = useSignIn()
   const handleSignIn = async () => {
-    try {
-      const response = await axios.post(
-        "http://192.168.100.12:4000/user/signIn",
-        {
-          email: form.email,
-          password: form.password,
-        }
-      );
+    /*try {
+      const response = await axios.post("http://192.168.100.12:4000/user/signIn", {
+        email: form.email,
+        password: form.password,
+      });
 
       Alert.alert("Success", "Signed in successfully!");
       router.replace("/home");
     } catch (error) {
       Alert.alert("Error", error.response?.data?.error || "Sign-in failed.");
+    }*/
+
+      try{
+        await logIn({
+          email: form.email,
+          password: form.password
+        })
+        Alert.alert("Success", "Sign in  successfully!");
+      router.replace("/home");
+        
+    } catch (error) {
+      console.error("Sign-up error:", error);
+      Alert.alert("Error", error.response?.data?.error || "SignIn failed.");
     }
   };
 
@@ -85,8 +97,7 @@ const SignIn = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
-  );
-  s;
+  );s
 };
 
 export default SignIn;

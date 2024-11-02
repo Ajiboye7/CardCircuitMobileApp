@@ -26,7 +26,7 @@ const createToken =(_id)=>{
     try {
       const user = await User.signUp(name, email, password, retypePassword);
       const token = createToken(user._id)
-      console.log(token)
+      console.log(email)
       res.status(201).json({name, email, token}); 
     } catch (error) {
       res.status(400).json({ error: error.message });
