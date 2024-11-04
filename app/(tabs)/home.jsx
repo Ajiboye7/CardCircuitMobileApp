@@ -14,31 +14,27 @@ import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
 import CustomButton from "../../components/CustomButton";
 import { router } from "expo-router";
-import { useRouter, useLocalSearchParams} from "expo-router";
+import { useRouter, useLocalSearchParams } from "expo-router";
 import { useAuth } from "../../context/authContext";
+import { useSignOut } from "../../context/useSignOut";
+
 const Home = () => {
+  const logout = useSignOut();
 
-  
+  const { state } = useAuth(); 
+  const userName = state.user?.name; 
 
-
-  const { state } = useAuth(); // Access user state from context
-  const userName = state.user?.name; // Safely access the user's name
-  
-  
   const params = useLocalSearchParams();
   const cardNumber = params.cardNumber || null;
   const cardAlias = params.cardAlias || null;
   const cardBalance = params.cardBalance || null;
 
-  
-
-  
   const handleClick = () => {
-    Alert.alert("Button clicked!");
+    logout();
   };
 
   const handleAddCard = () => {
-    router.push("/profile"); 
+    router.push("/profile");
   };
 
   return (
@@ -63,7 +59,7 @@ const Home = () => {
 
         <View>
           <Text className="text-white text-[32px]  font-sfProRoundedBold">
-            My Cards 
+            My Cards
           </Text>
           <ImageBackground
             source={images.addCardBg}
@@ -72,71 +68,67 @@ const Home = () => {
           >
             {cardBalance && cardAlias && cardNumber ? (
               <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
-              <View className="w-[313px] h-[180px] bg-tertiary-30 justify-center items-center rounded-[20px] ">
-                <Text className="text-white text-[32px] font-sfProRoundedBold mb-3">
-                  ₦500K
-                </Text>
-                <Text className="text-white text-[16px] font-sfPro mb-3">
-                  Primary Savings
-                </Text>
-                <Text className="text-white text-[14px] font-sfPro mb-3">
-                  **** **** **** 3254
-                </Text>
-                <View>
-                  <Image source={icons.masterCard} />
-                </View>
-              </View>
-              <View className="absolute right-[300px] top-[130px]">
-                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
-                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
-                    <Image source={icons.arrowLeft} />
-                  </View>
-                </TouchableOpacity>
-              </View>
-
-              <View className="absolute left-[300px] top-[130px]">
-                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
-                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
-                    <Image source={icons.arrowRight} />
-                  </View>
-                </TouchableOpacity>
-              </View>
-            </View>
-            ): (
-              <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
-              <TouchableOpacity onPress={handleAddCard} activeOpacity={0.7}>
-                <View className="justify-center items-center flex flex-col gap-3">
-                  <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
-                    <Image source={icons.add} />
-                  </View>
-
-                  <Text className="text-white text-[14px] font-sfPro">
-                    Add a new Card
+                <View className="w-[313px] h-[180px] bg-tertiary-30 justify-center items-center rounded-[20px] ">
+                  <Text className="text-white text-[32px] font-sfProRoundedBold mb-3">
+                    ₦500K
                   </Text>
+                  <Text className="text-white text-[16px] font-sfPro mb-3">
+                    Primary Savings
+                  </Text>
+                  <Text className="text-white text-[14px] font-sfPro mb-3">
+                    **** **** **** 3254
+                  </Text>
+                  <View>
+                    <Image source={icons.masterCard} />
+                  </View>
                 </View>
-              </TouchableOpacity>
+                <View className="absolute right-[300px] top-[130px]">
+                  <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                    <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                      <Image source={icons.arrowLeft} />
+                    </View>
+                  </TouchableOpacity>
+                </View>
 
-              <View className="absolute right-[300px] top-[130px]">
-                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
-                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
-                    <Image source={icons.arrowLeft} />
+                <View className="absolute left-[300px] top-[130px]">
+                  <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                    <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                      <Image source={icons.arrowRight} />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ) : (
+              <View className="bg-tertiary-30 w-[313px] h-[180px] rounded-[20px] relative justify-center items-center">
+                <TouchableOpacity onPress={handleAddCard} activeOpacity={0.7}>
+                  <View className="justify-center items-center flex flex-col gap-3">
+                    <View className="bg-secondary w-[20px] h-[20px] items-center justify-center rounded-full p-4">
+                      <Image source={icons.add} />
+                    </View>
+
+                    <Text className="text-white text-[14px] font-sfPro">
+                      Add a new Card
+                    </Text>
                   </View>
                 </TouchableOpacity>
-              </View>
 
-              <View className="absolute left-[300px] top-[130px]">
-                <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
-                  <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
-                    <Image source={icons.arrowRight} />
-                  </View>
-                </TouchableOpacity>
-              </View>
-            </View>
+                <View className="absolute right-[300px] top-[130px]">
+                  <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                    <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                      <Image source={icons.arrowLeft} />
+                    </View>
+                  </TouchableOpacity>
+                </View>
 
+                <View className="absolute left-[300px] top-[130px]">
+                  <TouchableOpacity onPress={handleClick} activeOpacity={0.7}>
+                    <View className="w-[30px] h-[30px] bg-secondary rounded-full items-center justify-center">
+                      <Image source={icons.arrowRight} />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </View>
             )}
-            
-            
-
           </ImageBackground>
           <View></View>
         </View>
@@ -168,7 +160,7 @@ const Home = () => {
               You can monitor your balance in real{"\n"}
               time. Let’s get you set up!
             </Text>
-            <CustomButton containerStyles="w-[73px] h-[40px]" title="Set Up"/>
+            <CustomButton containerStyles="w-[73px] h-[40px]" title="Set Up" />
           </View>
           <Text className="text-white text-[32px] font-sfProRoundedBold mb-3">
             Today
@@ -177,6 +169,7 @@ const Home = () => {
           <Text className="text-white text-[14px] font-sfPro mb-4">
             Add a Card to get all updates on daily transactions.
           </Text>
+          <CustomButton title="LOgout" handlePress={handleClick} />
         </View>
       </ScrollView>
     </SafeAreaView>

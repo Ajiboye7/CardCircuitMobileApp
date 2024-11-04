@@ -13,7 +13,14 @@ const useSignUp = () => {
         { name, email, password, retypePassword }
       );
       const { token, name: userName, email: userEmail } = response.data;
-      await AsyncStorage.setItem("token", token);
+
+     const userData = JSON.stringify({
+        token,
+        name: userName,
+        email: userEmail,
+      });
+
+      await AsyncStorage.setItem("user", userData);
       
       dispatch({
         type: "LOGIN_SUCCESS",

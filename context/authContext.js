@@ -1,4 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from "react";
+import { router } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -27,9 +30,31 @@ const authReducer = (state, action) => {
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
+ 
+
   useEffect(() => {
-    console.log("Auth state has changed:", state);
-  }, [state]);
+    const checkToken = async () => {
+      const userData = await AsyncStorage.getItem("user");
+  
+      if (userData) {
+        // Parse the JSON object back into an object
+        const user = JSON.parse(userData);
+  
+        // Dispatch user data to context state
+        dispatch({
+          type: "LOGIN_SUCCESS",
+          payload: user,
+        });
+        
+        router.replace("/home");
+      } else {
+        router.replace("/sign-in");
+      }
+    };
+  
+    checkToken();
+  }, []);
+  
 
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
