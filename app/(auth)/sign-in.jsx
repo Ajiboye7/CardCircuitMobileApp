@@ -15,21 +15,24 @@ const SignIn = () => {
   });
 
   const router = useRouter();
-  
-  const {logIn} = useSignIn()
-  const handleSignIn = async () => {
 
-      try{
-        await logIn({
-          email: form.email,
-          password: form.password
-        })
-        Alert.alert("Success", "Sign in  successfully!");
+  const { logIn } = useSignIn();
+
+  const handleSignIn = async () => {
+    if (!form.email || !form.password) {
+      return Alert.alert("Error", "All fields are required to be filled");
+    }
+
+    try {
+      await logIn({
+        email: form.email,
+        password: form.password,
+      });
+      Alert.alert("Success", "Sign in  successfully!");
       router.replace("/home");
-        
     } catch (error) {
       console.error("Sign-up error:", error);
-      Alert.alert("Error", error.response?.data?.error || "SignIn failed.");
+      Alert.alert("Error", error.response?.data?.error || "Sign-in failed.");
     }
   };
 
@@ -86,7 +89,8 @@ const SignIn = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
-  );s
+  );
+  s;
 };
 
 export default SignIn;

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from "react";
 
 const AuthContext = createContext();
+export const useAuth = () => useContext(AuthContext);
 
 const initialState = {
   user: null,
@@ -37,4 +38,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+

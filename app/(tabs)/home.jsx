@@ -15,12 +15,22 @@ import IconButton from "../../components/IconButton";
 import CustomButton from "../../components/CustomButton";
 import { router } from "expo-router";
 import { useRouter, useLocalSearchParams} from "expo-router";
+import { useAuth } from "../../context/authContext";
 const Home = () => {
 
+  
+
+
+  const { state } = useAuth(); // Access user state from context
+  const userName = state.user?.name; // Safely access the user's name
+  
+  
   const params = useLocalSearchParams();
   const cardNumber = params.cardNumber || null;
   const cardAlias = params.cardAlias || null;
   const cardBalance = params.cardBalance || null;
+
+  
 
   
   const handleClick = () => {
@@ -42,7 +52,7 @@ const Home = () => {
 
             <View className="relative">
               <Text className="text-white bg-secondary text-[16px] font-sfProRoundedBold p-2 w-[140px] h-[36px] text-center -ml-2 !rounded-r-[10px]">
-                Ajiboye 
+                {userName}
               </Text>
               {/* Inverted curve using absolute positioning */}
               <View className="absolute bg-primary w-[25px] h-[36px] rounded-r-full right-32 top-0"></View>
@@ -53,7 +63,7 @@ const Home = () => {
 
         <View>
           <Text className="text-white text-[32px]  font-sfProRoundedBold">
-            My Cards{" "}
+            My Cards 
           </Text>
           <ImageBackground
             source={images.addCardBg}

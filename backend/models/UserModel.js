@@ -26,7 +26,7 @@ const userSchema = new Schema({
 
 userSchema.statics.signUp = async function (name, email, password, retypePassword) {
   if (!name || !email || !password || !retypePassword) {
-    throw Error('All fields are required to be filled');
+    throw Error('Alaye fill the input field');
   }
 
   if (!validator.isEmail(email)) {
@@ -59,6 +59,10 @@ userSchema.statics.signUp = async function (name, email, password, retypePasswor
 userSchema.statics.signIn = async function (email, password) {
   if (!email || !password) {
     throw Error('All fields are required to be filled');
+  }
+
+  if (!validator.isEmail(email)) {
+    throw Error('Email not valid');
   }
 
   const user = await this.findOne({ email });

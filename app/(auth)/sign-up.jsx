@@ -7,6 +7,7 @@ import CustomButton from "../../components/CustomButton";
 import { icons } from "../../constants";
 import useSignUp from "../../context/useSignUp";
 
+
 const SignUp = () => {
   const [form, setForm] = useState({
     name: "",
