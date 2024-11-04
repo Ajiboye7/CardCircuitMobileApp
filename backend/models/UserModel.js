@@ -30,7 +30,7 @@ userSchema.statics.signUp = async function (
   retypePassword
 ) {
   if (!name || !email || !password || !retypePassword) {
-    throw Error("Alaye fill the input field");
+    throw Error("All fields are to be filled ");
   }
 
   if (!validator.isEmail(email)) {

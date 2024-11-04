@@ -19,6 +19,7 @@ const SignIn = () => {
   const { logIn } = useSignIn();
 
   const handleSignIn = async () => {
+    
     if (!form.email || !form.password) {
       return Alert.alert("Error", "All fields are required to be filled");
     }
