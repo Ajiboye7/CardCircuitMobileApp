@@ -19,15 +19,16 @@ import { useAuth } from "../../context/authContext";
 import { useSignOut } from "../../context/useSignOut";
 
 const Home = () => {
-  const logout = useSignOut();
 
   const { state } = useAuth(); 
-  const userName = state.user?.name; 
+  const userName = state.user?.name || 'Guest' 
 
   const params = useLocalSearchParams();
   const cardNumber = params.cardNumber || null;
   const cardAlias = params.cardAlias || null;
   const cardBalance = params.cardBalance || null;
+
+  const logout = useSignOut();
 
   const handleClick = () => {
     logout();
@@ -35,8 +36,8 @@ const Home = () => {
 
   const handleAddCard = () => {
     router.push("/profile");
-  };
-
+  };  
+ 
   return (
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>

@@ -9,13 +9,12 @@ const useSignIn = () => {
     dispatch({ type: "SET_LOADING" });
 
     try {
-      const response = await axios.post("http://192.168.0.3:4000/user/signIn", {
+      const response = await axios.post("http://192.168.0.2:4000/user/signIn", {
         email,
         password,
       });
 
       const { token, name: userName, email: userEmail } = response.data;
-      
       const userData = JSON.stringify({
         token,
         name: userName,

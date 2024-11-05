@@ -9,7 +9,7 @@ export const useSignOut = () => {
 
   const handleLogOut = async () => {
     try {
-      await AsyncStorage.removeItem("token");
+      await AsyncStorage.removeItem("user");
       dispatch({ type: "LOGOUT" });
       router.replace("/sign-in");
       Alert.alert("Success", "You have been signed out.");

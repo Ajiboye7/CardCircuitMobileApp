@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from "react";
 import { router } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import jwt_decode from "jwt-decode";
 
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -31,6 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const checkToken = async () => {
+        
       const userData = await AsyncStorage.getItem("user");
 
       if (userData) {
