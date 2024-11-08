@@ -5,7 +5,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { AuthProvider } from '../context/authContext'; 
-
+import {ProfileProvider} from '../context/profileContext'
+ 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -41,6 +42,7 @@ export default function RootLayout() {
   return (
 
     <AuthProvider>
+    <ProfileProvider></ProfileProvider>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
        <Stack.Screen name="index" options={{ headerShown: false }} />
