@@ -109,8 +109,6 @@ const AddCard = () => {
         <View className="absolute right-0 bottom-0">
           <Image
             source={images.RightbuttomImage}
-
-            
           />
           </View> 
       </View>

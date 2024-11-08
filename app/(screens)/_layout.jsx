@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+
 import React from "react";
 import { Stack } from "expo-router";
 
@@ -22,6 +22,13 @@ const ScreensLayout = () => {
 
         <Stack.Screen
           name="profile"
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="add-profile"
           options={{
             headerShown: false,
           }}

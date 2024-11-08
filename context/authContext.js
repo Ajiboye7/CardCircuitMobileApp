@@ -26,13 +26,13 @@ const authReducer = (state, action) => {
       return state;
   }
 };
-
+ 
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   useEffect(() => {
     const checkToken = async () => {
-        
+         
       const userData = await AsyncStorage.getItem("user");
 
       if (userData) {

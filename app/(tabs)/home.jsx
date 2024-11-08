@@ -35,7 +35,7 @@ const Home = () => {
   };
 
   const handleAddCard = () => {
-    router.push("/profile");
+    router.push("/add-profile");
   };  
  
   return (
@@ -136,7 +136,9 @@ const Home = () => {
 
         <View className="flex flex-row items-center justify-center gap-4">
           <View>
-            <IconButton iconSource={icons.add} title="Add" />
+            <IconButton iconSource={icons.add} title="Add" 
+              
+            />
           </View>
 
           <View>

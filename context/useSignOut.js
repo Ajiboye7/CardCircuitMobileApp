@@ -5,7 +5,7 @@ import { useAuth } from "./authContext";
 import { router } from "expo-router";
 
 export const useSignOut = () => {
-  const { dispatch } = useAuth();
+  const { dispatch } = useAuth(); 
 
   const handleLogOut = async () => {
     try {
