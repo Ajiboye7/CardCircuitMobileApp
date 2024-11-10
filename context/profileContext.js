@@ -11,7 +11,16 @@ const initialState = {
   profilePicture: null,
 };
 
-const profilePicture: action.payload };
+const profileReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_PROFILE":
+      return { ...state, profile: action.payload };
+
+    case "UPDATE_PROFILE":
+      return { ...state, ...action.payload };
+
+    case "UPDATE_PROFILE_PICTURE":
+      return { ...state, profilePicture: action.payload };
 
     case "RESET_PROFILE":
       return initialState;
