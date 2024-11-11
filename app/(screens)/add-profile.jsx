@@ -65,7 +65,7 @@ const Profile = () => {
       setProfilePicture(result.uri);
 
       const pickedImageUri = result.assets[0].uri; // Local file URI
-      setProfilePicture(pickedImageUri); // Update state
+      setProfilePicture(pickedImageUri); 
 
       console.log("Picked Image URI:", pickedImageUri);
     }
