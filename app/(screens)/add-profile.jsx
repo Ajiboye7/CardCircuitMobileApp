@@ -32,7 +32,7 @@ const Profile = () => {
     try {
       const response = await axios.post(
         "http://192.168.0.3:4000/user/profile",
-        { ...form, profilePicture }, // data to be sent in request
+        { ...form, profilePicture }, 
         {
           headers: {
             Authorization: `Bearer ${token}`, // Use the token from authentication
