@@ -5,15 +5,58 @@ import { icons } from "../../constants";
 import CustomButton from "../../components/CustomButton";
 import FormField from "../../components/FormField";
 import * as ImagePicker from 'expo-image-picker';
+import axios from "axios";
+import {useProfile} from "../../context/profileContext"
+import { Alert } from "react-native";
+
+import {useAuth} from '../../context/authContext'
+
 
 const Profile = () => {
 
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        
-      }); 
+  const { state } = useAuth(); 
+  const token = state.user?.token
+  const [profilePicture, setProfilePicture] = useState(null);
+
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    
+  }); 
+  
+  const { dispatch } = useProfile();
+
+  const handleAddProfile = async () => {
+
+    if (!form.email || !form.name || !form.phone) {
+      return Alert.alert("Error", "All fields are required to be filled");
+    }
+
+    try {
+      const response = await axios.post(
+        "http://192.168.0.3:4000/user/profile",
+        { ...form, profilePicture }, // data to be sent in request
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Use the token from authentication
+          },
+        }
+      );
+
+      console.log("Form data:", form);
+console.log("Profile Picture URI:", profilePicture);
+
+      const data = response.data;
+      dispatch({ type: "SET_PROFILE", payload: data });
+    } catch (error) {
+      console.error("Error creating profile:", error.response?.data?.error || error.message);
+    }
+  };
+  
+
+ 
 
       const pickImage = async () => {
         const result = await ImagePicker.launchImageLibraryAsync({
@@ -25,6 +68,11 @@ const Profile = () => {
 
         if (!result.canceled) {
             setProfilePicture(result.uri);
+
+            const pickedImageUri = result.assets[0].uri; // Local file URI
+    setProfilePicture(pickedImageUri); // Update state
+
+    console.log("Picked Image URI:", pickedImageUri); 
         }
     };
 
@@ -72,7 +120,7 @@ const Profile = () => {
             title="Add profile"
             containerStyles="w-[174.2px] h-[50px]"
             textStyles="text-[16px]"
-            
+            handlePress={handleAddProfile}
           />
         </View>
 

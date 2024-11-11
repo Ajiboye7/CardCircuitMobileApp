@@ -1,23 +1,25 @@
 const Profile = require("../models/ProfileModel");
 
-export const getprofile = async (req, res) => {
+ const getProfile = async (req, res) => {
   try {
     const userId = req.user._id;
-    const profile = await Profile.find({ userId });
+    const profile = await Profile.find({ user_id: userId });
     res.status(200).json(profile);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-export const createProfile = async (req, res) => {
-  const { name, email, phoneNumber, profilePicture } = req.body;
+ const createProfile = async (req, res) => {
+  const { name, email, phone, profilePicture } = req.body;
   try {
+    const userId = req.user._id
     const newProfile = await Profile.addProfile(
       name,
       email,
-      phoneNumber,
-      profilePicture
+      phone,
+      profilePicture,
+      userId
     );
 
     res.status(201).json(newProfile);
@@ -28,7 +30,7 @@ export const createProfile = async (req, res) => {
   }
 };
 
-export const updateProfile = async (req, res) => {
+ const updateProfile = async (req, res) => {
   try {
     const { name, email, phoneNumber, profilePicture } = req.body;
     const updatedProfile = await Profile.findByIdAndUpdate(
@@ -44,4 +46,10 @@ export const updateProfile = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+};
+
+module.exports = {
+  createProfile,
+  updateProfile,
+  getProfile,
 };

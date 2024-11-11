@@ -87,6 +87,11 @@ const SignIn = () => {
           <Link href="/sign-up" className="text-secondary text-lg">
             Sign Up
           </Link>
+
+          <Link href="/home" className="text-secondary text-lg">
+            Home
+          </Link>
+
         </View>
       </ScrollView>
     </SafeAreaView>

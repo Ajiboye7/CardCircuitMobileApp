@@ -42,8 +42,8 @@ export default function RootLayout() {
   return (
 
     <AuthProvider>
-    <ProfileProvider></ProfileProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ProfileProvider>
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -51,6 +51,8 @@ export default function RootLayout() {
         <Stack.Screen name="(screens)" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
+    </ProfileProvider>
+     
     </AuthProvider>
     
     

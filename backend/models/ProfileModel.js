@@ -16,7 +16,7 @@ const ProfileSchema = new Schema(
       unique: true,
       lowercase: true,
     },
-    phoneNumber: {
+    phone: {
       type: String,
       required: true,
     },
@@ -24,19 +24,26 @@ const ProfileSchema = new Schema(
       type: String,
       required: false,
     },
+    user_id: {
+      type: mongoose.Schema.Types.ObjectId,  
+      ref: 'User', 
+      required: true
+    }
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Profile", ProfileSchema);
 
-ProfileSchema.static.addProfile = async function (
+ProfileSchema.statics.addProfile = async function (
   name,
   email,
-  phoneNumber,
-  profilePicture
+  phone,
+  profilePicture,
+  user_id
 ) {
-  if (!name || !email || !phoneNumber) {
+
+  
+  if (!name || !email || !phone) {
     throw Error("Input the necessary details");
   }
 
@@ -44,9 +51,13 @@ ProfileSchema.static.addProfile = async function (
     throw Error("Email not valid");
   }
 
-  if (!isValidPhoneNumber(phoneNumber)) {
-    throw Error("Invalid phone number format");
-  }
+  const formattedPhone = phone.startsWith("0") 
+  ? "+234" + phone.slice(1) // Assuming Nigeria country code +234
+  : phone;
+
+if (!isValidPhoneNumber(formattedPhone)) {
+  throw Error("Invalid phone number format");
+}
 
   if (profilePicture && !isValidURL(profilePicture)) {
     throw new Error("Profile picture URL is not valid.");
@@ -55,9 +66,12 @@ ProfileSchema.static.addProfile = async function (
   const userProfile = await this.create({
     name,
     email,
-    phoneNumber,
+    phone,
     profilePicture,
+    user_id
   });
 
   return userProfile;
 };
+
+module.exports = mongoose.model("Profile", ProfileSchema);
