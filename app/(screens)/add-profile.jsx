@@ -1,35 +1,30 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
-import {React, useState }from "react";
+import { React, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "../../constants";
 import CustomButton from "../../components/CustomButton";
 import FormField from "../../components/FormField";
-import * as ImagePicker from 'expo-image-picker';
+import * as ImagePicker from "expo-image-picker";
 import axios from "axios";
-import {useProfile} from "../../context/profileContext"
+import { useProfile } from "../../context/profileContext";
 import { Alert } from "react-native";
 
-import {useAuth} from '../../context/authContext'
-
+import { useAuth } from "../../context/authContext";
 
 const Profile = () => {
-
-  const { state } = useAuth(); 
-  const token = state.user?.token
+  const { state } = useAuth();
+  const token = state.user?.token;
   const [profilePicture, setProfilePicture] = useState(null);
-
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    
-  }); 
-  
+  });
+
   const { dispatch } = useProfile();
 
   const handleAddProfile = async () => {
-
     if (!form.email || !form.name || !form.phone) {
       return Alert.alert("Error", "All fields are required to be filled");
     }
@@ -46,36 +41,35 @@ const Profile = () => {
       );
 
       console.log("Form data:", form);
-console.log("Profile Picture URI:", profilePicture);
+      console.log("Profile Picture URI:", profilePicture);
 
       const data = response.data;
       dispatch({ type: "SET_PROFILE", payload: data });
     } catch (error) {
-      console.error("Error creating profile:", error.response?.data?.error || error.message);
+      console.error(
+        "Error creating profile:",
+        error.response?.data?.error || error.message
+      );
     }
   };
-  
 
- 
+  const pickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
 
-      const pickImage = async () => {
-        const result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.Images,
-            allowsEditing: true,
-            aspect: [4, 3],
-            quality: 1,
-        });
+    if (!result.canceled) {
+      setProfilePicture(result.uri);
 
-        if (!result.canceled) {
-            setProfilePicture(result.uri);
+      const pickedImageUri = result.assets[0].uri; // Local file URI
+      setProfilePicture(pickedImageUri); // Update state
 
-            const pickedImageUri = result.assets[0].uri; // Local file URI
-    setProfilePicture(pickedImageUri); // Update state
-
-    console.log("Picked Image URI:", pickedImageUri); 
-        }
-    };
-
+      console.log("Picked Image URI:", pickedImageUri);
+    }
+  };
 
   return (
     <SafeAreaView>
@@ -90,7 +84,6 @@ console.log("Profile Picture URI:", profilePicture);
         <Text className="text-white text-[32px] font-sfProRoundedBold my-5 mx-3">
           Create Profile
         </Text>
-        
 
         <View>
           <FormField
@@ -113,7 +106,6 @@ console.log("Profile Picture URI:", profilePicture);
             keyboardType="numeric"
             handleChangeText={(e) => setForm({ ...form, phone: e })}
           />
-          
         </View>
         <View className="flex items-center justify-center mt-8">
           <CustomButton
@@ -125,9 +117,8 @@ console.log("Profile Picture URI:", profilePicture);
         </View>
 
         <TouchableOpacity onPress={pickImage}>
-                <Text className="text-white">Choose Profile Picture</Text>
-            </TouchableOpacity>
-
+          <Text className="text-white">Choose Profile Picture</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
