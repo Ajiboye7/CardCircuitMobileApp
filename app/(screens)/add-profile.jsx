@@ -35,7 +35,7 @@ const Profile = () => {
         { ...form, profilePicture }, 
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Use the token from authentication
+            Authorization: `Bearer ${token}`, 
           },
         }
       );
