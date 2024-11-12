@@ -10,10 +10,12 @@ import { useProfile } from "../../context/profileContext";
 import { Alert } from "react-native";
 
 import { useAuth } from "../../context/authContext";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Profile = () => {
   const { state } = useAuth();
   const token = state.user?.token;
+
   const [profilePicture, setProfilePicture] = useState(null);
 
   const [form, setForm] = useState({
@@ -25,6 +27,12 @@ const Profile = () => {
   const { dispatch } = useProfile();
 
   const handleAddProfile = async () => {
+    console.log("Token:", token); // Add this line to log the token
+
+    if (!token) {
+      return Alert.alert("Error", "You must be logged in to add a profile.");
+    }
+    
     if (!form.email || !form.name || !form.phone) {
       return Alert.alert("Error", "All fields are required to be filled");
     }
@@ -40,16 +48,32 @@ const Profile = () => {
         }
       );
 
-      console.log("Form data:", form);
+      /*console.log("Form data:", form);*/
       console.log("Profile Picture URI:", profilePicture);
 
       const data = response.data;
+
+      const userProfile = JSON.stringify(data)
+
+      await AsyncStorage.setItem("profile", userProfile);
+
       dispatch({ type: "SET_PROFILE", payload: data });
     } catch (error) {
-      console.error(
-        "Error creating profile:",
-        error.response?.data?.error || error.message
-      );
+      if (error.response) {
+        
+        const errorMessage = error.response?.data?.error || error.message;
+  
+        if (errorMessage.includes("E11000 duplicate key error")) {
+          
+          Alert.alert("Error", "The email address is already registered. Please use a different email.");
+        } else {
+          Alert.alert("Error", errorMessage);
+        }
+  
+      } else {
+        // Handle network or other errors
+        Alert.alert("Error", "An unexpected error occurred. Please try again.");
+      }
     }
   };
 
@@ -70,6 +94,58 @@ const Profile = () => {
       console.log("Picked Image URI:", pickedImageUri);
     }
   };
+
+  /*const pickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+  
+    if (!result.canceled && result.assets && result.assets[0]) {
+      const pickedImageUri = result.assets[0].uri; // Local file URI
+  
+      if (pickedImageUri) {
+        setProfilePicture(pickedImageUri); // Set the URI for the profile picture
+  
+        const uriParts = pickedImageUri.split('.');
+        const fileType = uriParts[uriParts.length - 1]; // Get the file extension
+  
+        // Proceed to create the FormData and upload
+        const formData = new FormData();
+        formData.append('photo', {
+          uri: pickedImageUri,
+          name: `profile_picture.${fileType}`,
+          type: `image/${fileType}`,
+        });
+  
+        try {
+          const response = await axios.post(
+            "http://192.168.0.3:4000/upload", // Your backend endpoint for image upload
+            formData,
+            {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+  
+          const imageUrl = response.data.imageUrl; // Get the image URL from the server response
+          setProfilePicture(imageUrl); // Store the image URL for profile submission
+        } catch (error) {
+          console.error("Error uploading image:", error);
+        }
+      } else {
+        Alert.alert("Error", "No image selected.");
+      }
+    } else {
+      Alert.alert("Error", "Image picker canceled or no valid image.");
+    }
+  };*/
+  
+  
 
   return (
     <SafeAreaView>

@@ -33,8 +33,9 @@ const Profile = require("../models/ProfileModel");
  const updateProfile = async (req, res) => {
   try {
     const { name, email, phoneNumber, profilePicture } = req.body;
-    const updatedProfile = await Profile.findByIdAndUpdate(
-      req.params.id,
+    const userId = req.user._id;
+    const updatedProfile = await Profile.findOneAndUpdate(
+      { user_id: userId },
       { name, email, phoneNumber, profilePicture },
       { new: true }
     );

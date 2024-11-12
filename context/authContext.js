@@ -31,7 +31,8 @@ export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   useEffect(() => {
-    const checkToken = async () => {
+    
+    const checkUser = async () => {
          
       const userData = await AsyncStorage.getItem("user");
 
@@ -49,7 +50,7 @@ export const AuthProvider = ({ children }) => {
       }
     };
 
-    checkToken();
+    checkUser();
   }, []);
 
   return (

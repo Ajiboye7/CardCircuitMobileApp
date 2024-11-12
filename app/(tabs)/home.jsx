@@ -14,9 +14,10 @@ import { TouchableOpacity } from "react-native";
 import IconButton from "../../components/IconButton";
 import CustomButton from "../../components/CustomButton";
 import { router } from "expo-router";
-import { useRouter, useLocalSearchParams } from "expo-router";
+import { useRouter, useLocalSearchParams, Link } from "expo-router";
 import { useAuth } from "../../context/authContext";
 import { useSignOut } from "../../context/useSignOut";
+
 
 const Home = () => {
 
@@ -173,6 +174,12 @@ const Home = () => {
             Add a Card to get all updates on daily transactions.
           </Text>
           <CustomButton title="LOgout" handlePress={handleClick} />
+          
+          <Link href="/profile" className="text-secondary text-lg">
+            Home
+          </Link>
+           
+         
         </View>
       </ScrollView>
     </SafeAreaView>

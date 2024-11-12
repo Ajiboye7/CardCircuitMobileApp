@@ -52,16 +52,17 @@ ProfileSchema.statics.addProfile = async function (
   }
 
   const formattedPhone = phone.startsWith("0") 
-  ? "+234" + phone.slice(1) // Assuming Nigeria country code +234
+  ? "+234" + phone.slice(1)
   : phone;
 
 if (!isValidPhoneNumber(formattedPhone)) {
   throw Error("Invalid phone number format");
 }
 
-  if (profilePicture && !isValidURL(profilePicture)) {
-    throw new Error("Profile picture URL is not valid.");
-  }
+if (profilePicture && !profilePicture.startsWith('file://') && !validator.isURL(profilePicture)) {
+  throw new Error("Profile picture URL is not valid.");
+}
+
 
   const userProfile = await this.create({
     name,

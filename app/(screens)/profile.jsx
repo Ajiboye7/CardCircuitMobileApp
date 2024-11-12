@@ -1,12 +1,25 @@
 import { View, Text, ScrollView, Image } from "react-native";
-import React from "react";
+import {React, useEffect} from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import IconButton from "../../components/IconButton";
 import { icons } from "../../constants";
 import CustomButton from "../../components/CustomButton";
+import { router } from "expo-router";
+import {useProfile} from '../../context/profileContext'
 
 const Profile = () => {
+
+  const {profile} = useProfile()
+
+  const { name, email, phone, user_id, profilePicture } = profile
+
+
+  const handleEdit = () =>{
+    router.replace("/edit-profile")
+  }
+
   return (
+
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex flex-row justify-between items-center mt-5 mx-3">
@@ -21,7 +34,7 @@ const Profile = () => {
         </Text>
         <View className='flex flex-row justify-between items-center mb-4 mx-3'>
             <Text className='text-white'>USer ID</Text>
-            <Text className='text-white'>ee29euf0d29eu29</Text>
+            <Text className='text-white'>{user_id || "no id"}</Text>
         </View>
         <View className=" bg-tertiary-20 h-[433px] mx-2 px-3 pt-5 rounded-[20px]">
           <View className="flex flex-row justify-between items-center border-b border-fontColor-gray pb-5 mb-5">
@@ -33,24 +46,26 @@ const Profile = () => {
 
           <View className="flex flex-row justify-between items-center border-b border-fontColor-gray pb-5 mb-5">
             <Text className="text-white text-fontColor-light-90">Name</Text>
-            <Text className="text-white font-sfProRoundedBold">Ajiboye</Text>
+            <Text className="text-white font-sfProRoundedBold">{name || "add name"}</Text>
           </View>
 
           <View className="flex flex-row justify-between items-center border-b border-fontColor-gray pb-5 mb-5">
             <Text className="text-white text-fontColor-light-90">Email</Text>
-            <Text className="text-white font-sfProRoundedBold">ajiboyemuyideen7@gmail.com</Text>
+            <Text className="text-white font-sfProRoundedBold">{email || "add email"}</Text>
           </View>
 
           <View className="flex flex-row justify-between items-center border-b border-fontColor-gray pb-5 mb-5">
             <Text className="text-white text-fontColor-light-90">
               Phone Number
             </Text>
-            <Text className="text-white font-sfProRoundedBold">08172710973</Text>
+            <Text className="text-white font-sfProRoundedBold">{phone || "add phone"}</Text>
           </View>
 
           <View className="justify-center items-center mt-8">
           <CustomButton 
             title="Edit Profile"
+            handlePress={handleEdit}
+
           />
           </View>
          

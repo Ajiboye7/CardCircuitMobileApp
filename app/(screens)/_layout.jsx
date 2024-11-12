@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Stack } from "expo-router";
 
@@ -29,6 +28,13 @@ const ScreensLayout = () => {
 
         <Stack.Screen
           name="add-profile"
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="edit-profile"
           options={{
             headerShown: false,
           }}

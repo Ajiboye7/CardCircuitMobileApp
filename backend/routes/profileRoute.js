@@ -10,6 +10,7 @@ router.use(requireAuth)
 
 router.get('/' , getProfile)
 router.post('/', createProfile)
-router.put('/:id', updateProfile)
+router.put('/', updateProfile)
+
 
 module.exports = router
