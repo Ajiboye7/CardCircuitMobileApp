@@ -31,7 +31,7 @@ const UpdateProfile = () => {
 
     try {
       const response = await axios.put(
-        "http://192.168.0.3:4000/user/profile",
+        "http://192.168.100.12/user/profile",
         { ...form },
         {
           headers: {

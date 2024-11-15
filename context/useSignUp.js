@@ -9,7 +9,7 @@ const useSignUp = () => {
     dispatch({ type: "SET_LOADING" });
     try {
       const response = await axios.post(
-        "http://192.168.0.3:4000/user/signUp",
+        "http://192.168.100.12:4000/user/signUp",
         { name, email, password, retypePassword }
       );
       const { token, name: userName, email: userEmail } = response.data;

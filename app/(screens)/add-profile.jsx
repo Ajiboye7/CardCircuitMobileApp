@@ -27,7 +27,7 @@ const Profile = () => {
   const { dispatch } = useProfile();
 
   const handleAddProfile = async () => {
-    console.log("Token:", token); // Add this line to log the token
+    //console.log("Token:", token); // Add this line to log the token
 
     if (!token) {
       return Alert.alert("Error", "You must be logged in to add a profile.");
@@ -39,7 +39,7 @@ const Profile = () => {
 
     try {
       const response = await axios.post(
-        "http://192.168.0.3:4000/user/profile",
+        "http://192.168.100.12:4000/user/profile",
         { ...form, profilePicture }, 
         {
           headers: {
@@ -77,7 +77,7 @@ const Profile = () => {
     }
   };
 
-  const pickImage = async () => {
+  /*const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
@@ -93,9 +93,9 @@ const Profile = () => {
 
       console.log("Picked Image URI:", pickedImageUri);
     }
-  };
+  };*/
 
-  /*const pickImage = async () => {
+  const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
@@ -108,6 +108,7 @@ const Profile = () => {
   
       if (pickedImageUri) {
         setProfilePicture(pickedImageUri); // Set the URI for the profile picture
+        console.log("Picked Image URI:", pickedImageUri);
   
         const uriParts = pickedImageUri.split('.');
         const fileType = uriParts[uriParts.length - 1]; // Get the file extension
@@ -115,14 +116,14 @@ const Profile = () => {
         // Proceed to create the FormData and upload
         const formData = new FormData();
         formData.append('photo', {
-          uri: pickedImageUri,
+          uri: pickedImageUri, 
           name: `profile_picture.${fileType}`,
           type: `image/${fileType}`,
         });
   
         try {
           const response = await axios.post(
-            "http://192.168.0.3:4000/upload", // Your backend endpoint for image upload
+            "http://192.168.100.12:4000/upload", // Your backend endpoint for image upload
             formData,
             {
               headers: {
@@ -143,7 +144,7 @@ const Profile = () => {
     } else {
       Alert.alert("Error", "Image picker canceled or no valid image.");
     }
-  };*/
+  };
   
   
 
