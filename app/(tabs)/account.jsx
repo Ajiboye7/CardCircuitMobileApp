@@ -203,29 +203,6 @@ const Account = () => {
   const userName = state.user?.name || "Guest";
   const logout = useSignOut();
 
-  const signOut = () => {
-    logout();
-  };
-
-  // Function to toggle the switches
-  const toggleSwitch1 = () => setIsSwitch1Enabled((prevState) => !prevState);
-  const toggleSwitch2 = () => setIsSwitch2Enabled((prevState) => !prevState);
-
-  const items = [
-    { id: "1", title: "My Account Settings", icon: icons.setting },
-    { id: "2", title: "Retrieve Financial Overview", icon: icons.money },
-    { id: "3", title: "Manage Subscriptions", icon: icons.setting },
-    { id: "4", title: "Self Help", icon: icons.info },
-    { id: "5", title: "Security", icon: icons.securitySafe },
-    { id: "6", title: "Linked Cards", icon: icons.card },
-    { id: "7", title: "Card Lock", icon: icons.setting },
-    { id: "8", title: "Contact Us", icon: icons.call },
-    { id: "9", title: "Log Out", icon: icons.logOut },
-  ];
-
-  // Header Component
-  const ListHeader = () => (
-    <>
       <View className="flex flex-row justify-between items-center mb-6 mx-3">
         <View className="flex gap-1">
           <Text className="text-white text-[32px] font-sfProRoundedBold">
