@@ -27,7 +27,7 @@ const ProfileSchema = new Schema(
     user_id: {
       type: mongoose.Schema.Types.ObjectId,  
       ref: 'User', 
-      required: true
+      required: true,
     }
   },
   { timestamps: true }
@@ -41,7 +41,7 @@ ProfileSchema.statics.addProfile = async function (
   profilePicture,
   user_id
 ) {
-
+  //console.log("User ID in createProfile:", user_id);
   
   if (!name || !email || !phone) {
     throw Error("Input the necessary details");

@@ -32,7 +32,7 @@ const SignIn = () => {
       Alert.alert("Success", "Sign in  successfully!");
       router.replace("/home");
     } catch (error) {
-      console.error("Sign-up error:", error);
+      console.error("Sign-in error:", error);
       Alert.alert("Error", error.response?.data?.error || "Sign-in failed.");
     }
   };
@@ -61,7 +61,7 @@ const SignIn = () => {
             value={form.email}
             placeholder="name@example.com"
             keyboardType="email-address"
-            handleChangeText={(e) => setForm({ ...form, email: e })}
+            handleChangeText={(e) => setForm({ ...form, email: e })} 
           />
 
           <FormField

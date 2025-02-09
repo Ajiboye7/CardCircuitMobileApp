@@ -12,9 +12,15 @@ import {React, useState} from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons, images } from "@/constants";
 import IconButton from "../../components/IconButton";
+import { useAuth } from "../../context/authContext";
+import { useProfile } from "../../context/profileContext";
 
 const Analytics = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null); 
+  const { state } = useAuth(); 
+  const { profile } = useProfile();
+  const { profilePicture } = profile;
+  const userName = state.user?.name || 'Guest' 
 
   const items = [
     {
@@ -43,12 +49,19 @@ const Analytics = () => {
         <View className="flex flex-row items-center justify-between px-3 my-5">
           <View className="flex flex-row items-center relative">
             <View className=" z-10 w-[40px] h-[40px]  rounded-full p-3 justify-center items-center">
-              <Image source={icons.profile2} className="w-[50px] h-[50px]" />
+            <Image
+          source={
+            profilePicture
+              ? { uri: `http://192.168.100.12:4000${profilePicture}`}
+              : icons.profile2
+          }
+          style={{ width: 40, height: 40, borderRadius: 50 }}
+        />
             </View>
 
             <View className="relative">
               <Text className="text-white bg-secondary text-[16px] font-sfProRoundedBold p-2 w-[140px] h-[36px] text-center -ml-2 !rounded-r-[10px]">
-                Ajiboye 
+                {userName} 
               </Text>
               {/* Inverted curve using absolute positioning */}
               <View className="absolute bg-primary w-[25px] h-[36px] rounded-r-full right-32 top-0"></View>

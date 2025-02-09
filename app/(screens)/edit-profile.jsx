@@ -28,10 +28,11 @@ const UpdateProfile = () => {
     if (!token) {
       return Alert.alert("Error", "You must be logged in to update your profile.");
     }
+    
 
     try {
       const response = await axios.put(
-        "http://192.168.100.12/user/profile",
+        "http://192.168.100.12:4000/user/profile",
         { ...form },
         {
           headers: {
@@ -41,7 +42,7 @@ const UpdateProfile = () => {
       );
 
       const data = response.data;
-
+      
       await AsyncStorage.setItem("profile", JSON.stringify(data));
 
       dispatch({ type: "UPDATE_PROFILE", payload: data });

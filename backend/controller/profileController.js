@@ -1,6 +1,6 @@
 const Profile = require("../models/ProfileModel");
 
- const getProfile = async (req, res) => {
+ /*const getProfile = async (req, res) => {
   try {
     const userId = req.user._id;
     const profile = await Profile.find({ user_id: userId });
@@ -8,12 +8,32 @@ const Profile = require("../models/ProfileModel");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+};*/
+
+const getProfile = async (req, res) => {
+  try {
+    const userId = req.user._id;  // Get the userId from the authenticated user (from JWT or session)
+    
+    // Find the latest profile for the user, sorted by the most recent 'updatedAt'
+    const profile = await Profile.findOne({ user_id: userId }).sort({ updatedAt: -1 });
+
+    if (!profile) {
+      return res.status(404).json({ error: "Profile not found" });
+    }
+
+    res.status(200).json(profile);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
+
 
  const createProfile = async (req, res) => {
   const { name, email, phone, profilePicture } = req.body;
   try {
     const userId = req.user._id
+   // console.log("userId from req.user:", userId); 
+    
     const newProfile = await Profile.addProfile(
       name,
       email,
@@ -33,6 +53,7 @@ const Profile = require("../models/ProfileModel");
  const updateProfile = async (req, res) => {
   try {
     const { name, email, phoneNumber, profilePicture } = req.body;
+    
     const userId = req.user._id;
     const updatedProfile = await Profile.findOneAndUpdate(
       { user_id: userId },
@@ -44,13 +65,103 @@ const Profile = require("../models/ProfileModel");
       return res.status(404).json({ error: "profile not found" });
     }
     res.status(200).json(updatedProfile);
+
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
+
+/*const uploadImage = async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No file uploaded' });
+  }
+
+  const imageUrl = `/uploads/${req.file.filename}`;
+
+  try {
+    const userId = req.user?._id; // Extract user ID if authenticated
+    if (!userId) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    const profile = await Profile.findOne({ user_id: userId });
+    if (!profile) {
+      return res.status(404).json({ error: 'Profile not found' });
+    }
+
+    profile.image = imageUrl; // Save the image URL
+    await profile.save();
+
+    res.status(200).json({ message: 'Image uploaded successfully', imageUrl });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};*/
+
+
+const uploadImage = async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
+
+  const imageUrl = `/uploads/${req.file.filename}`;
+
+  try {
+    const userId = req.user._id;
+    const profile = await Profile.findOneAndUpdate(
+      { user_id: userId },
+      { profilePicture: imageUrl },
+      { new: true }
+    );
+
+    if (!profile) {
+      return res.status(404).json({ error: "Profile not found" });
+    }
+
+    res.status(200).json({
+      message: "Image uploaded successfully",
+      profilePicture: profile.profilePicture,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const deleteImage = async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    
+    const updatedProfile = await Profile.findOneAndUpdate(
+      { user_id: userId },
+      { profilePicture: null },
+      { new: true }
+    );
+
+    if (!updatedProfile) {
+      return res.status(404).json({ error: "Profile not found" });
+    }
+
+    res.status(200).json({ 
+      message: "Profile picture deleted successfully",
+      profile: updatedProfile 
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+
+
+
 module.exports = {
   createProfile,
   updateProfile,
   getProfile,
+  uploadImage,
+  deleteImage,
 };

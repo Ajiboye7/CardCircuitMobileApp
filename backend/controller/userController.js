@@ -16,7 +16,7 @@ const signUpUser = async (req, res) => {
   }
 };
 
-const signInUser = async (req, res) => {
+/*const signInUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.signIn(email, password);
@@ -25,6 +25,29 @@ const signInUser = async (req, res) => {
     const token = createToken(user._id);
 
     res.status(200).json({ name, email, token });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};*/
+
+const signInUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.signIn(email, password);
+
+    const { name, phone, profilePicture, _id } = user;
+    const token = createToken(user._id);
+
+    const profile = {
+      name,
+      email,
+      phone,
+      profilePicture,
+      user_id: _id,
+    };
+
+    res.status(200).json({ token, name, email, profile });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

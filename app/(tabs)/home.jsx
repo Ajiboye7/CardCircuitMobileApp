@@ -17,35 +17,49 @@ import { router } from "expo-router";
 import { useRouter, useLocalSearchParams, Link } from "expo-router";
 import { useAuth } from "../../context/authContext";
 import { useSignOut } from "../../context/useSignOut";
-
+import { useProfile } from "../../context/profileContext";
 
 const Home = () => {
+  const { state } = useAuth();
+  const userName = state.user?.name || "Guest";
 
-  const { state } = useAuth(); 
-  const userName = state.user?.name || 'Guest' 
+  const { profile } = useProfile();
+
+  const { profilePicture } = profile;
 
   const params = useLocalSearchParams();
   const cardNumber = params.cardNumber || null;
   const cardAlias = params.cardAlias || null;
   const cardBalance = params.cardBalance || null;
 
-  const logout = useSignOut();
-
   const handleClick = () => {
-    logout();
+    alert("Arrow Clicked")
   };
 
   const handleAddCard = () => {
     router.push("/add-profile");
-  };  
- 
+  };
+
+  const handleProfile = () => {
+    router.push("/profile");
+  };
+
   return (
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="flex flex-row items-center justify-between px-3 my-5">
           <View className="flex flex-row items-center relative">
             <View className="bg-secondary z-10 w-[40px] h-[40px]  rounded-full p-3 justify-center items-center">
-              <Image source={icons.profile} className="w-[30px] h-[30px]" />
+              <TouchableOpacity onPress={handleProfile}>
+                <Image
+                  source={
+                    profilePicture
+                      ? { uri: `http://192.168.100.12:4000${profilePicture}`}
+                      : icons.profile
+                  }
+                  style={{ width: 30, height: 30, borderRadius: 50 }}
+                />
+              </TouchableOpacity>
             </View>
 
             <View className="relative">
@@ -137,9 +151,7 @@ const Home = () => {
 
         <View className="flex flex-row items-center justify-center gap-4">
           <View>
-            <IconButton iconSource={icons.add} title="Add" 
-              
-            />
+            <IconButton iconSource={icons.add} title="Add" />
           </View>
 
           <View>
@@ -173,13 +185,6 @@ const Home = () => {
           <Text className="text-white text-[14px] font-sfPro mb-4">
             Add a Card to get all updates on daily transactions.
           </Text>
-          <CustomButton title="LOgout" handlePress={handleClick} />
-          
-          <Link href="/profile" className="text-secondary text-lg">
-            Home
-          </Link>
-           
-         
         </View>
       </ScrollView>
     </SafeAreaView>

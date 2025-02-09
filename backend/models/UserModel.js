@@ -22,6 +22,33 @@ const userSchema = new Schema({
     default: Date.now,
   },
 });
+/*const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    default: null,
+  },
+  profilePicture: {
+    type: String,
+    default: null,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});*/
 
 userSchema.statics.signUp = async function (
   name,
@@ -72,7 +99,9 @@ userSchema.statics.signIn = async function (email, password) {
 
   if (!user) {
     throw Error("This user does not exist");
+  }else{
   }
+  
 
   const match = await bcrypt.compare(password, user.password);
 
