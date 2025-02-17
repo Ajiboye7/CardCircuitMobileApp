@@ -12,9 +12,9 @@ const Profile = require("../models/ProfileModel");
 
 const getProfile = async (req, res) => {
   try {
-    const userId = req.user._id;  // Get the userId from the authenticated user (from JWT or session)
+    const userId = req.user._id; 
     
-    // Find the latest profile for the user, sorted by the most recent 'updatedAt'
+    
     const profile = await Profile.findOne({ user_id: userId }).sort({ updatedAt: -1 });
 
     if (!profile) {

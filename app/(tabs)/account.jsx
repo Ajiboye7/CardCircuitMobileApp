@@ -207,7 +207,6 @@ const Account = () => {
     logout();
   };
 
-  // Function to toggle the switches
   const toggleSwitch1 = () => setIsSwitch1Enabled((prevState) => !prevState);
   const toggleSwitch2 = () => setIsSwitch2Enabled((prevState) => !prevState);
 
