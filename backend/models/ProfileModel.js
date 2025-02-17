@@ -13,7 +13,20 @@ const ProfileSchema = new Schema(
     email: {
       type: String,
       required: true,
-      unique: t
+      unique: true,
+      lowercase: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    profilePicture: {
+      type: String,
+      required: false,
+    },
+    user_id: {
+      type: mongoose.Schema.Types.ObjectId,  
+      ref: 'User', 
       required: true,
     }
   },
