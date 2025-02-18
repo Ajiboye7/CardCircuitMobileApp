@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useProfile } from "../context/profileContext";
-import { useAuth } from "../context/authContext";
+import { useProfile } from "./profileContext";
+import { useAuth } from "./authContext";
 import axios from "axios";
 import { Alert } from "react-native";
 
