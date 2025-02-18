@@ -12,6 +12,57 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
+/*const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    default: null,
+  },
+  profilePicture: {
+    type: String,
+    default: null,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});*/
+
+userSchema.statics.signUp = async function (
+  name,
+  email,
+  password,
+  retypePassword
+) {
+  if (!name || !email || !password || !retypePassword) {
+    throw Error("All fields are to be filled ");
+  }
+
+  if (!validator.isEmail(email)) {
+    throw Error("Email not valid");
+  }
 
   if (!validator.isStrongPassword(password)) {
     throw Error("Password not strong enough");
