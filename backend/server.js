@@ -13,14 +13,7 @@ const app = express();
 app.use(express.json()); 
 
 app.use(express.urlencoded({ extended: true }));
-
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-app.use('/user', userRoute );
-app.use('/user/profile', profileRoute)
-app.use('/user/upload', uploadImageRoute)
-
-
+ 
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
