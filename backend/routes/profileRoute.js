@@ -6,11 +6,7 @@ const requireAuth = require('../middleware/requiredAuth')
 
 
 
-router.use(requireAuth)
 
-router.get('/' , getProfile)
-router.post('/', createProfile)
-router.put('/', updateProfile)
 
 
 module.exports = router
