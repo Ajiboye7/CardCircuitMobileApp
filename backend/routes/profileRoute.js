@@ -2,13 +2,7 @@ const  { createProfile, updateProfile, getProfile} = require("../controller/prof
 
 const express = require("express")
 const router = express.Router()
-const requireAuth = require('../middleware/requiredAuth')
-
-
-
-router.use(requireAuth)
-
-router.get('/' , getProfile)
+const requi
 router.post('/', createProfile)
 router.put('/', updateProfile)
 
