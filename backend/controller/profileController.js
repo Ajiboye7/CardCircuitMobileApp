@@ -23,7 +23,7 @@ const getProfile = async (req, res) => {
   const { name, email, phone, profilePicture } = req.body;
   try {
     const userId = req.user._id
-   // console.log("userId from req.user:", userId); 
+  
     
     const newProfile = await Profile.addProfile(
       name,
