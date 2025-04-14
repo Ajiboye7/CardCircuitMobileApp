@@ -1,14 +1,5 @@
 const Profile = require("../models/ProfileModel");
 
- /*const getProfile = async (req, res) => {
-  try {
-    const userId = req.user._id;
-    const profile = await Profile.find({ user_id: userId });
-    res.status(200).json(profile);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};*/
 
 const getProfile = async (req, res) => {
   try {
