@@ -63,33 +63,6 @@ const getProfile = async (req, res) => {
 };
 
 
-/*const uploadImage = async (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ error: 'No file uploaded' });
-  }
-
-  const imageUrl = `/uploads/${req.file.filename}`;
-
-  try {
-    const userId = req.user?._id; // Extract user ID if authenticated
-    if (!userId) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-
-    const profile = await Profile.findOne({ user_id: userId });
-    if (!profile) {
-      return res.status(404).json({ error: 'Profile not found' });
-    }
-
-    profile.image = imageUrl; // Save the image URL
-    await profile.save();
-
-    res.status(200).json({ message: 'Image uploaded successfully', imageUrl });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: error.message });
-  }
-};*/
 
 
 const uploadImage = async (req, res) => {
