@@ -95,14 +95,7 @@ const uploadImage = async (req, res) => {
 };
 
 const deleteImage = async (req, res) => {
-  try {
-    const userId = req.user._id;
-
-    
-    const updatedProfile = await Profile.findOneAndUpdate(
-      { user_id: userId },
-      { profilePicture: null },
-      { new: true }
+  try 
     );
 
     if (!updatedProfile) {
