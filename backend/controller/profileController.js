@@ -96,6 +96,16 @@ const uploadImage = async (req, res) => {
 
 const deleteImage = async (req, res) => {
   try {
+    const userId = req.user._id;
+
+    
+    const updatedProfile = await Profile.findOneAndUpdate(
+      { user_id: userId },
+      { profilePicture: null },
+      { new: true }
+    );
+
+    if (!updatedProfile) {
       return res.status(404).json({ error: "Profile not found" });
     }
 
