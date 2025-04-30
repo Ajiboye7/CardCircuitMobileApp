@@ -11,15 +11,7 @@ const { dispatch: profileDispatch } = useProfile();
 
   const handleLogOut = async () => {
     try {
-      await AsyncStorage.removeItem("user");
-      authDispatch({ type: "LOGOUT" });
-
-      await AsyncStorage.removeItem('profile');
-      profileDispatch({type: "RESET_PROFILE"})
-
-      router.replace("/sign-in");
-      Alert.alert("Success", "You have been signed out.");
-    } catch (error) {
+      await Asyn 
       console.error("Error during sign out:", error);
       Alert.alert("Error", "Failed to sign out. Please try again.");
     }
