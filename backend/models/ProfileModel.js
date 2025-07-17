@@ -64,6 +64,14 @@ if (profilePicture && !profilePicture.startsWith('file://') && !validator.isURL(
 }
 
 
+  const userProfile = await this.create({
+    name,
+    email,
+    phone,
+    profilePicture,
+    user_id
+  });
+
   return userProfile;
 };
 
